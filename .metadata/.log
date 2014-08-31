@@ -1,0 +1,661 @@
+!SESSION 2014-08-31 09:47:15.044 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data E:\WCCAMS\Giting_Warehouse
+
+!ENTRY org.eclipse.equinox.registry 2 0 2014-08-31 09:47:27.341
+!MESSAGE The extensions and extension-points from the bundle "org.eclipse.epf.richtext" are ignored. The bundle is not marked as singleton. 
+
+!ENTRY org.eclipse.jface 2 0 2014-08-31 09:47:44.388
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-08-31 09:47:44.389
+!MESSAGE A conflict occurred for SHIFT+DEL:
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeAllInstances,Remove All Visible Results,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.cut,Cut,
+		Cut the selection to the clipboard,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.handlers.WidgetMethodHandler@8ffaf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+Binding(SHIFT+DEL,
+	ParameterizedCommand(Command(org.topcased.modeler.deleteModelObject,Delete From Model,
+		Allows the user to delete the selected graph element and its associated model element in a Topcased editor.,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.osgi 2 1 2014-08-31 09:47:48.535
+!MESSAGE NLS unused message: prompt.optclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-08-31 09:47:48.535
+!MESSAGE NLS unused message: prompt.preclasspath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY org.eclipse.osgi 2 1 2014-08-31 09:47:48.535
+!MESSAGE NLS unused message: prompt.optlibrarypath in: com.genuitec.eclipse.easie.core.configuration
+
+!ENTRY com.genuitec.eclipse.core 1 0 2014-08-31 09:47:52.749
+!MESSAGE Unable to locate .myeclipse.properties file
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:52.865
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\html\css_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:52.914
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\html\forms_lists_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:52.935
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\html\htmlform_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:52.960
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\html\html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:52.985
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\html\javascript_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.008
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\jsf_f_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.034
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\jsf_h_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.059
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\struts_bean_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.097
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\struts_html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.124
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\struts_logic_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2014-08-31 09:47:53.149
+!MESSAGE Installed snippet library: D:\MyEclipse\MyEclipse-9.0M1\configuration\org.eclipse.osgi\bundles\121\1\.cp\snippets\jsp\struts_tiles_snippets.xml
+
+!ENTRY org.maven.ide.eclipse 4 0 2014-08-31 09:49:06.955
+!MESSAGE Unable to update index for central|http://repo1.maven.org/maven2
+!STACK 0
+java.io.IOException: Authorization exception retrieving nexus-maven-repository-index.properties
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$WagonFetcher.retrieve(DefaultIndexUpdater.java:681)
+	at org.sonatype.nexus.index.updater.AbstractResourceFetcher.retrieve(AbstractResourceFetcher.java:22)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.downloadIndexProperties(DefaultIndexUpdater.java:493)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.access$100(DefaultIndexUpdater.java:74)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater$IndexAdaptor.setProperties(DefaultIndexUpdater.java:780)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:954)
+	at org.sonatype.nexus.index.updater.DefaultIndexUpdater.fetchAndUpdateIndex(DefaultIndexUpdater.java:138)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateRemoteIndex(NexusIndexManager.java:1060)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager.updateIndex(NexusIndexManager.java:1013)
+	at org.maven.ide.eclipse.internal.index.NexusIndexManager$1.run(NexusIndexManager.java:624)
+	at org.maven.ide.eclipse.internal.index.IndexUpdaterJob.run(IndexUpdaterJob.java:71)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-08-31 09:50:34.676
+!MESSAGE Clipboard content is not a directory path
+
+!ENTRY org.eclipse.osgi 2 1 2014-08-31 09:51:02.744
+!MESSAGE NLS unused message: Unnecessary_Semicolon_ERROR in: org.eclipse.wst.html.core.internal.HTMLCorePluginResources
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-08-31 09:51:13.493
+!MESSAGE Clipboard content is not a directory path
+
+!ENTRY org.eclipse.egit.ui 4 0 2014-08-31 13:15:09.431
+!MESSAGE Can't connect to any repository: https://github.com/Giting/Giting_Warehouse.git (Transport error occured during push operation: https://github.com/Giting/Giting_Warehouse.git: 401 Authorization Required)
+
+!ENTRY org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:20:09.544
+!MESSAGE 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:20:09.544
+!MESSAGE 同步 /Test/src/com/liu/test/Test.java 时发生错误：Error getting status for resource L/Test/src/com/liu/test/Test.java org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.eclipse.team.core.TeamException: Error getting status for resource L/Test/src/com/liu/test/Test.java org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:281)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.internal.ui.synchronize.RefreshSubscriberParticipantJob.doRefresh(RefreshSubscriberParticipantJob.java:116)
+	at org.eclipse.team.internal.ui.synchronize.RefreshParticipantJob.run(RefreshParticipantJob.java:309)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	... 5 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 6 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 10 more
+!SUBENTRY 2 org.eclipse.team.core 4 0 2014-08-31 13:20:09.545
+!MESSAGE Error getting status for resource L/Test/src/com/liu/test/Test.java org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.internal.ui.synchronize.RefreshSubscriberParticipantJob.doRefresh(RefreshSubscriberParticipantJob.java:116)
+	at org.eclipse.team.internal.ui.synchronize.RefreshParticipantJob.run(RefreshParticipantJob.java:309)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 6 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 10 more
+!SUBENTRY 3 org.tigris.subversion.subclipse.core 4 -6 2014-08-31 13:20:09.546
+!MESSAGE org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.internal.ui.synchronize.RefreshSubscriberParticipantJob.doRefresh(RefreshSubscriberParticipantJob.java:116)
+	at org.eclipse.team.internal.ui.synchronize.RefreshParticipantJob.run(RefreshParticipantJob.java:309)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 10 more
+
+!ENTRY org.tigris.subversion.subclipse.ui 4 0 2014-08-31 13:20:45.785
+!MESSAGE 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+!STACK 1
+org.eclipse.team.core.TeamException: 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:217)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: 同步 /Test/src/com/liu/test 时发生错误：Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+org.eclipse.team.core.TeamException: Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:281)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	... 23 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:20:45.786
+!MESSAGE 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+!SUBENTRY 2 org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:20:45.786
+!MESSAGE 同步 /Test/src/com/liu/test 时发生错误：Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.eclipse.team.core.TeamException: Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:281)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	... 23 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 3 org.eclipse.team.core 4 0 2014-08-31 13:20:45.787
+!MESSAGE Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 4 org.tigris.subversion.subclipse.core 4 -6 2014-08-31 13:20:45.787
+!MESSAGE org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+
+!ENTRY org.tigris.subversion.subclipse.ui 4 0 2014-08-31 13:21:34.742
+!MESSAGE 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+!STACK 1
+org.eclipse.team.core.TeamException: 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:217)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Contains: 同步 /Test/src/com/liu/test 时发生错误：Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+org.eclipse.team.core.TeamException: Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:281)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	... 23 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 1 org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:21:34.743
+!MESSAGE 同步 SVNStatusSubscriber 时报告了错误。1 中的 0 个资源已经同步。
+!SUBENTRY 2 org.tigris.subversion.subclipse.core 4 0 2014-08-31 13:21:34.743
+!MESSAGE 同步 /Test/src/com/liu/test 时发生错误：Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.eclipse.team.core.TeamException: Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:281)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	... 23 more
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 3 org.eclipse.team.core 4 0 2014-08-31 13:21:34.743
+!MESSAGE Error getting status for resource F/Test/src/com/liu/test org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 1
+org.tigris.subversion.subclipse.core.SVNException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.subclipse.core.SVNException.wrapException(SVNException.java:91)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:60)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	... 24 more
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
+!SUBENTRY 4 org.tigris.subversion.subclipse.core 4 -6 2014-08-31 13:21:34.744
+!MESSAGE org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+!STACK 0
+org.tigris.subversion.svnclientadapter.SVNClientException: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:542)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:514)
+	at org.tigris.subversion.subclipse.core.client.StatusCommand.execute(StatusCommand.java:69)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.execute(StatusAndInfoCommand.java:47)
+	at org.tigris.subversion.subclipse.core.client.StatusAndInfoCommand.run(StatusAndInfoCommand.java:58)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.findChanges(SVNWorkspaceSubscriber.java:254)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:232)
+	at org.tigris.subversion.subclipse.core.sync.SVNWorkspaceSubscriber.refresh(SVNWorkspaceSubscriber.java:206)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.refresh(SubscriberResourceMappingContext.java:167)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.ensureRefreshed(SubscriberResourceMappingContext.java:207)
+	at org.eclipse.team.core.subscribers.SubscriberResourceMappingContext.fetchMembers(SubscriberResourceMappingContext.java:132)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.getRemotePackageFragmentTraversals(JavaElementResourceMapping.java:217)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping.access$0(JavaElementResourceMapping.java:209)
+	at org.eclipse.jdt.internal.corext.util.JavaElementResourceMapping$PackageFragmentResourceMapping.getTraversals(JavaElementResourceMapping.java:182)
+	at org.eclipse.team.core.subscribers.Subscriber.getState(Subscriber.java:499)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:101)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getSynchronizationState(SubscriberTeamStateProvider.java:88)
+	at org.eclipse.team.ui.synchronize.SubscriberTeamStateProvider.getStateDescription(SubscriberTeamStateProvider.java:124)
+	at org.eclipse.team.internal.ui.mapping.WorkspaceTeamStateProvider.getStateDescription(WorkspaceTeamStateProvider.java:105)
+	at org.eclipse.team.ui.mapping.SynchronizationStateTester.getState(SynchronizationStateTester.java:154)
+	at org.tigris.subversion.subclipse.ui.decorator.SVNLightweightDecorator.decorate(SVNLightweightDecorator.java:340)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:81)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:365)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:347)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:371)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:331)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.tigris.subversion.javahl.ClientException: RA layer request failed
+svn: OPTIONS of 'https://github.com/Giting/Giting_Warehouse.git/trunk/Test/src/com/liu/test': could not connect to server (https://github.com)
+
+	at org.tigris.subversion.javahl.SVNClient.status(Native Method)
+	at org.tigris.subversion.svnclientadapter.javahl.AbstractJhlClientAdapter.getStatus(AbstractJhlClientAdapter.java:528)
+	... 28 more
