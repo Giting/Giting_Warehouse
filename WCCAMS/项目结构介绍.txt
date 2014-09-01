@@ -1,0 +1,51 @@
+概述：项目是按模块进行划分的，共五个模块.项目名称为WCCAMS（智慧社区管理系统）
+项目使用的框架版本：
+            jQuery v1.11.1;
+            EasyUI 1.4;
+            Spring4.0.6;
+            Struts2.3.15;
+            Hibernate4.2.4
+bf = basicFacility 基础设施
+be = basicElement 基础元素库
+pm = population management人口管理
+pmgm = party member group management党群管理     
+sm = system management系统管理  
+
+项目结构：
+WCCAMS 项目名称
+------com
+---------giting 组织名称
+---------------be       基础元素包
+-----------------action  Action层包 
+-----------------dao     数据访问层包
+-----------------service 业务层包
+注：剩余四个模块的包的机构如基础元素包完全一致！新增公共方法的原则：先去看别人的类中是否有自己需要的，没有就自己建一个姓名简写Util.java
+的类，在这类新增公共方法。
+---------------bf        基础设施包
+---------------entities  数据库实体映射统一包
+-------------------------table 表对应实体包
+-------------------------view  视图对应实体包
+---------------exception 自定义异常包
+---------------filter    过滤器包
+---------------pm        人口管理包
+---------------pmgm      党群管理包
+---------------sm        系统管理包
+---------------util      公共方法包
+
+WebRoot            web页面
+       be          基础元素包
+       	 css              css文件
+       	 html             html文件
+       	 images           images文件
+       	 js               js文件
+                     一下文件包格式一致。
+       bf          基础设施包
+       JSframework 前台框架包
+       pm          人口管理包
+       pmgm        党群管理包
+       sm          系统管理包
+       Commonfile  公共前台文件
+       	 css     公共CSS
+         images  公共images
+         js      公共js
+         html    公共html
