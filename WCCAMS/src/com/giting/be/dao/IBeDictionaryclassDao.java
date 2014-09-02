@@ -6,7 +6,7 @@ import com.giting.util.common.IBaseDao;
 *    
 * 项目名称：WCCAMS   
 * 类名称：IBeDictionaryclass   
-* 类描述：   
+* 类描述：   字典类型表对应的数据访问层的接口设计
 * 创建人：fuchenggang@foxmail.com   
 * 创建时间：2014-9-1 下午7:50:35   
 * 修改人：  
