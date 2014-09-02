@@ -27,9 +27,4 @@ public class PmRegistrationtypeServiceImpl extends BaseServiceImpl implements IP
 	@Resource
 	private IPmRegistrationtypeDao pmRegistrationtypeDao;
 
-	public void setPmRegistrationtypeDao(IPmRegistrationtypeDao pmRegistrationtypeDao) {
-		this.pmRegistrationtypeDao = pmRegistrationtypeDao;
-	}
-	
-	
 }

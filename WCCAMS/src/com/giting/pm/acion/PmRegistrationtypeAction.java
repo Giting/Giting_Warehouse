@@ -30,9 +30,5 @@ public class PmRegistrationtypeAction extends ActionSupport{
 	
 	@Resource
 	private IPmRegistrationtypeService pmRegistrationtypeService;
-
-	public void setPmRegistrationtypeService(IPmRegistrationtypeService pmRegistrationtypeService) {
-		this.pmRegistrationtypeService = pmRegistrationtypeService;
-	}
 	
 }

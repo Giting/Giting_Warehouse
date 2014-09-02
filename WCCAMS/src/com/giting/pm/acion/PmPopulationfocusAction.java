@@ -30,10 +30,5 @@ public class PmPopulationfocusAction extends ActionSupport{
 	
 	@Resource
 	private IPmPopulationfocusService pmPopulationfocusService;
-
-	public void setPmPopulationfocusService(IPmPopulationfocusService pmPopulationfocusService) {
-		this.pmPopulationfocusService = pmPopulationfocusService;
-	}
-
 	
 }

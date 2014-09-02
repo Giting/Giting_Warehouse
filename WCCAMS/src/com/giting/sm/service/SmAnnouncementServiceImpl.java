@@ -27,9 +27,4 @@ public class SmAnnouncementServiceImpl extends BaseServiceImpl implements ISmAnn
 	@Resource
 	private ISmAnnouncementDao smAnnouncementDao;
 
-	public void setSmAnnouncementDao(ISmAnnouncementDao smAnnouncementDao) {
-		this.smAnnouncementDao = smAnnouncementDao;
-	}
-	
-	
 }

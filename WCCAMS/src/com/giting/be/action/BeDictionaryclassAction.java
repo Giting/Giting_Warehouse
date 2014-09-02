@@ -30,8 +30,5 @@ public class BeDictionaryclassAction extends ActionSupport{
 	@Resource
 	private IBeDictionaryclassService beDictionaryclassService;
 
-	public void setBeDictionaryclassService(IBeDictionaryclassService beDictionaryclassService) {
-		this.beDictionaryclassService = beDictionaryclassService;
-	}
 	
 }

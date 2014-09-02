@@ -31,10 +31,5 @@ public class SmCommunityusersAction extends ActionSupport{
 
 	@Resource
 	private ISmCommunityusersService smCommunityusersService;
-
-	public void setSmCommunityusersService(ISmCommunityusersService smCommunityusersService) {
-		this.smCommunityusersService = smCommunityusersService;
-	}
-	
 	
 }

@@ -31,12 +31,6 @@ public class PmgmPartyAction extends ActionSupport{
 	@Resource
 	private IPmgmPartyService pmgmPartyService;
 
-	public void setPmgmPartyService(IPmgmPartyService pmgmPartyService) {
-		this.pmgmPartyService = pmgmPartyService;
-	}
-	
-	
-	
 	
 	
 }

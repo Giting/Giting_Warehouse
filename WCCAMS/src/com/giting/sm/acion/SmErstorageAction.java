@@ -31,10 +31,5 @@ public class SmErstorageAction extends ActionSupport{
 
 	@Resource
 	private ISmErstorageService smErstorageService;
-
-	public void setSmErstorageService(ISmErstorageService smErstorageService) {
-		this.smErstorageService = smErstorageService;
-	}
-	
 	
 }

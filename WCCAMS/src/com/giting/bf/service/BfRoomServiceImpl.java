@@ -26,9 +26,5 @@ public class BfRoomServiceImpl extends BaseServiceImpl implements IBfRoomService
 	@Resource
 	private IBfRoomDao bfRoomDao;
 
-	public void setBfRoomDao(IBfRoomDao bfRoomDao) {
-		this.bfRoomDao = bfRoomDao;
-	}
-	
 	
 }

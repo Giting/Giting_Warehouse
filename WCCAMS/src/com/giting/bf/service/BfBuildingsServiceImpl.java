@@ -29,9 +29,5 @@ public class BfBuildingsServiceImpl extends BaseServiceImpl implements IBfBuildi
 	@Resource
 	private IBfBuildingsDao bfBuildingsDao;
 
-	public void setBfBuildingsDao(IBfBuildingsDao bfBuildingsDao) {
-		this.bfBuildingsDao = bfBuildingsDao;
-	}
-	
 	
 }

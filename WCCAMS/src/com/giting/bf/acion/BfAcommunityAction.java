@@ -32,9 +32,5 @@ public class BfAcommunityAction extends ActionSupport{
 	@Resource
 	private IBfAcommunityService bfAcommunityService;
 
-	public void setBfAcommunityService(IBfAcommunityService bfAcommunityService) {
-		this.bfAcommunityService = bfAcommunityService;
-	}
-	
 	
 }

@@ -27,9 +27,4 @@ public class PmRegistrationServiceImpl extends BaseServiceImpl implements IPmFam
 	@Resource
 	private IPmRegistrationDao pmRegistrationDao;
 
-	public void setPmRegistrationDao(IPmRegistrationDao pmRegistrationDao) {
-		this.pmRegistrationDao = pmRegistrationDao;
-	}
-
-	
 }

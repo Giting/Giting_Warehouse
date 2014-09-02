@@ -27,8 +27,4 @@ public class SmModuleServiceImpl extends BaseServiceImpl implements ISmAnnouncem
 	@Resource
 	private ISmModuleDao smModuleDao;
 
-	public void setSmModuleDao(ISmModuleDao smModuleDao) {
-		this.smModuleDao = smModuleDao;
-	}
-	
 }

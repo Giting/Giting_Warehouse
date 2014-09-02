@@ -31,10 +31,4 @@ public class SmUserAction extends ActionSupport{
 
 	@Resource
 	private ISmUserService smUserService;
-
-	public void setSmUserService(ISmUserService smUserService) {
-		this.smUserService = smUserService;
-	}
-	
-	
 }

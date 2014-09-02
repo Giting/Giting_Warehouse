@@ -31,10 +31,5 @@ public class BfBuildingsAction extends ActionSupport{
 
 	@Resource
 	private IBfBuildingsService bfBuildingsService;
-
-	public void setBfBuildingsService(IBfBuildingsService bfBuildingsService) {
-		this.bfBuildingsService = bfBuildingsService;
-	}
-	
 	
 }

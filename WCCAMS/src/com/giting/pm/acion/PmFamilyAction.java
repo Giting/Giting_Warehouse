@@ -31,11 +31,5 @@ public class PmFamilyAction extends ActionSupport{
 	@Resource
 	private IPmFamilyService pmFamilyService;
 
-	public void setPmFamilyService(IPmFamilyService pmFamilyService) {
-		this.pmFamilyService = pmFamilyService;
-	}
-	
-	
-
 	
 }

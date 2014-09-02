@@ -27,9 +27,5 @@ public class PmFamilyroomServiceImpl extends BaseServiceImpl implements IPmFamil
 	@Resource
 	private IPmFamilyroomDao pmFamilyroomDao;
 
-	public void setPmFamilyroomDao(IPmFamilyroomDao pmFamilyroomDao) {
-		this.pmFamilyroomDao = pmFamilyroomDao;
-	}
-	
 	
 }

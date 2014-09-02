@@ -27,16 +27,9 @@ public class BeDictionarydataAction extends ActionSupport{
 	* @Fields serialVersionUID : 序列号 
 	*/ 
 	private static final long serialVersionUID = 1L;
-	
-	/** 
-	* @Fields beDictionarydataService : TODO(用一句话描述这个变量表示什么) 
-	*/ 
+
 	@Resource
 	private IBeDictionarydataService beDictionarydataService;
-
-	public void setBeDictionarydataService(IBeDictionarydataService beDictionarydataService) {
-		this.beDictionarydataService = beDictionarydataService;
-	}
 
 	
 }

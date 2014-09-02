@@ -26,10 +26,6 @@ public class PmPopulationfocusServiceImpl extends BaseServiceImpl implements IPm
 	
 	@Resource
 	private IPmPopulationfocusDao pmPopulationfocusDao;
-
-	public void setPmPopulationfocusDao(IPmPopulationfocusDao pmPopulationfocusDao) {
-		this.pmPopulationfocusDao = pmPopulationfocusDao;
-	}
 	
 	
 }

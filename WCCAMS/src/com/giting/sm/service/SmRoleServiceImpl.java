@@ -26,12 +26,5 @@ public class SmRoleServiceImpl extends BaseServiceImpl implements ISmAnnouncemen
 	
 	@Resource
 	private ISmRoleDao smRoleDao;
-
-	public void setSmRoleDao(ISmRoleDao smRoleDao) {
-		this.smRoleDao = smRoleDao;
-	}
-	
-	
-	
 	
 }

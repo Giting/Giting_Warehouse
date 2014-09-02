@@ -26,12 +26,5 @@ public class SmUserServiceImpl extends BaseServiceImpl implements ISmAnnouncemen
 	
 	@Resource
 	private ISmUserDao smUserDao;
-
-	public void setSmUserDao(ISmUserDao smUserDao) {
-		this.smUserDao = smUserDao;
-	}
-
-	
-	
 	
 }

@@ -27,8 +27,4 @@ public class SmRolesmoduleServiceImpl extends BaseServiceImpl implements ISmAnno
 	@Resource
 	private ISmRolesmoduleDao smRolesmoduleDao;
 
-	public void setSmRolesmoduleDao(ISmRolesmoduleDao smRolesmoduleDao) {
-		this.smRolesmoduleDao = smRolesmoduleDao;
-	}
-
 }

@@ -28,10 +28,6 @@ public class BeDictionarydataServiceImpl extends BaseServiceImpl implements IBeD
 	*/ 
 	@Resource
 	private IBeDictionarydataDao beDictionarydataDao;
-
-	public void setBeDictionarydataDao(IBeDictionarydataDao beDictionarydataDao) {
-		this.beDictionarydataDao = beDictionarydataDao;
-	}
 	
 	
 }

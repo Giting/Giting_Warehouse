@@ -31,10 +31,5 @@ public class PmgmBranchactivitiesAction extends ActionSupport{
 	@Resource
 	private IPmgmBranchactivitiesService pmgmBranchactivitiesService;
 
-	public void setPmgmBranchactivitiesService(IPmgmBranchactivitiesService pmgmBranchactivitiesService) {
-		this.pmgmBranchactivitiesService = pmgmBranchactivitiesService;
-	}
-	
-	
 	
 }

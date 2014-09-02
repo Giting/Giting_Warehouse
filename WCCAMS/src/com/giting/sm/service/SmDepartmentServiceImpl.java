@@ -27,8 +27,4 @@ public class SmDepartmentServiceImpl extends BaseServiceImpl implements ISmAnnou
 	@Resource
 	private ISmDepartmentDao  smDepartmentDao;
 
-	public void setSmDepartmentDao(ISmDepartmentDao smDepartmentDao) {
-		this.smDepartmentDao = smDepartmentDao;
-	}
-
 }

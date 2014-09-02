@@ -26,9 +26,4 @@ public class BfUnitServiceImpl extends BaseServiceImpl implements IBfUnitService
 	@Resource
 	private IBfUnitDao bfUnitDao;
 
-	public void setBfUnitDao(IBfUnitDao bfUnitDao) {
-		this.bfUnitDao = bfUnitDao;
-	}
-	
-	
 }

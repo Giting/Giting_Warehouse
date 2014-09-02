@@ -26,9 +26,4 @@ public class PmgmBranchServiceImpl extends BaseServiceImpl implements IPmgmBranc
 	
 	@Resource
 	private IPmgmBranchDao pmgmBranchDao;
-
-	public void setPmgmBranchDao(IPmgmBranchDao pmgmBranchDao) {
-		this.pmgmBranchDao = pmgmBranchDao;
-	}
-
 }

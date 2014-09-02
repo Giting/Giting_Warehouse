@@ -32,9 +32,4 @@ public class BfUnitAction extends ActionSupport{
 	@Resource
 	private IBfUnitService bfUnitService;
 
-	public void setBfUnitService(IBfUnitService bfUnitService) {
-		this.bfUnitService = bfUnitService;
-	}
-	
-	
 }

@@ -30,11 +30,6 @@ public class PmRegistrationAction extends ActionSupport{
 	
 	@Resource
 	private IPmRegistrationService pmRegistrationService;
-
-	public void setPmRegistrationService(IPmRegistrationService pmRegistrationService) {
-		this.pmRegistrationService = pmRegistrationService;
-	}
-	
 	
 	
 }

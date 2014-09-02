@@ -25,10 +25,6 @@ public class BeDictionaryclassServiceImpl extends BaseServiceImpl implements IBe
 	
 	@Resource
 	private IBeDictionaryclassDao beDictionaryclassDao;
-
-	public void setBeDictionaryclassDao(IBeDictionaryclassDao beDictionaryclassDao) {
-		this.beDictionaryclassDao = beDictionaryclassDao;
-	}
 	
 	
 }

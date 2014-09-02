@@ -27,8 +27,4 @@ public class SmErstorageServiceImpl extends BaseServiceImpl implements ISmAnnoun
 	@Resource
 	private ISmErstorageDao smErstorageDao;
 
-	public void setSmErstorageDao(ISmErstorageDao smErstorageDao) {
-		this.smErstorageDao = smErstorageDao;
-	}
-	
 }

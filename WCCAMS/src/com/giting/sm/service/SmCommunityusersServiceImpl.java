@@ -27,9 +27,5 @@ public class SmCommunityusersServiceImpl extends BaseServiceImpl implements ISmA
 	@Resource
 	private ISmCommunityusersDao smCommunityusersDao;
 
-	public void setSmCommunityusersDao(ISmCommunityusersDao smCommunityusersDao) {
-		this.smCommunityusersDao = smCommunityusersDao;
-	}
-	
 	
 }

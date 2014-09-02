@@ -25,11 +25,5 @@ public class PmgmPartyServiceImpl extends BaseServiceImpl implements IPmgmPartyS
 	
 	@Resource
 	private IPmgmPartyDao pmgmPartyDao;
-
-	public void setPmgmPartyDao(IPmgmPartyDao pmgmPartyDao) {
-		this.pmgmPartyDao = pmgmPartyDao;
-	}
-
-
 	
 }

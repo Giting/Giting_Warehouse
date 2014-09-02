@@ -32,9 +32,5 @@ public class SmDepartmentAction extends ActionSupport{
 	@Resource
 	private ISmDepartmentService smDepartmentService;
 
-	public void setSmDepartmentService(ISmDepartmentService smDepartmentService) {
-		this.smDepartmentService = smDepartmentService;
-	}
-	
 	
 }

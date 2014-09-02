@@ -30,8 +30,4 @@ public class PmgmBranchAction extends ActionSupport{
 	@Resource
 	private IBeDictionaryclassService beDictionaryclassService;
 
-	public void setBeDictionaryclassService(IBeDictionaryclassService beDictionaryclassService) {
-		this.beDictionaryclassService = beDictionaryclassService;
-	}
-	
 }

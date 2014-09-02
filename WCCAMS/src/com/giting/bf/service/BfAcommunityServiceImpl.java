@@ -25,10 +25,5 @@ public class BfAcommunityServiceImpl extends BaseServiceImpl implements IBfAcomm
 	
 	@Resource
 	private IBfAcommunityDao bfAcommunityDao;
-
-	public void setBfAcommunityDao(IBfAcommunityDao bfAcommunityDao) {
-		this.bfAcommunityDao = bfAcommunityDao;
-	}
-	
 	
 }

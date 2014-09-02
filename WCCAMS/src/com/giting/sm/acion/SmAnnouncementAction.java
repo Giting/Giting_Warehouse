@@ -32,8 +32,5 @@ public class SmAnnouncementAction extends ActionSupport{
 	@Resource
 	private ISmAnnouncementService smAnnouncementService;
 
-	public void setSmAnnouncementService(ISmAnnouncementService smAnnouncementService) {
-		this.smAnnouncementService = smAnnouncementService;
-	}
 
 }

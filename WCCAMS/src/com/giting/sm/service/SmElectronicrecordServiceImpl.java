@@ -27,8 +27,4 @@ public class SmElectronicrecordServiceImpl extends BaseServiceImpl implements IS
 	@Resource
 	private ISmElectronicrecordDao smElectronicrecordDao;
 
-	public void setSmElectronicrecordDao(ISmElectronicrecordDao smElectronicrecordDao) {
-		this.smElectronicrecordDao = smElectronicrecordDao;
-	}
-	
 }

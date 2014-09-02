@@ -32,9 +32,5 @@ public class SmElectronicrecordAction extends ActionSupport{
 	@Resource
 	private ISmElectronicrecordService smElectronicrecordService;
 
-	public void setSmElectronicrecordService(ISmElectronicrecordService smElectronicrecordService) {
-		this.smElectronicrecordService = smElectronicrecordService;
-	}
-	
 	
 }

@@ -27,8 +27,4 @@ public class SmEmployeesServiceImpl extends BaseServiceImpl implements ISmAnnoun
 	@Resource
 	private ISmEmployeesDao smEmployeesDao;
 
-	public void setSmEmployeesDao(ISmEmployeesDao smEmployeesDao) {
-		this.smEmployeesDao = smEmployeesDao;
-	}
-	
 }

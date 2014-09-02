@@ -31,12 +31,6 @@ public class SmModuleAction extends ActionSupport{
 
 	@Resource
 	private ISmModuleService smModuleService;
-
-	public void setSmModuleService(ISmModuleService smModuleService) {
-		this.smModuleService = smModuleService;
-	}
-	
-	
 	
 	
 }

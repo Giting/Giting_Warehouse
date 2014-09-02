@@ -31,9 +31,5 @@ public class PmPopulationinformationAction extends ActionSupport{
 	@Resource
 	private IPmPopulationinformationService pmPopulationinformationService;
 
-	public void setPmPopulationinformationService(IPmPopulationinformationService pmPopulationinformationService) {
-		this.pmPopulationinformationService = pmPopulationinformationService;
-	}
-
 	
 }

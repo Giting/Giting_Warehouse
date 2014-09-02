@@ -27,7 +27,4 @@ public class PmPopulationinformationServiceImpl extends BaseServiceImpl implemen
 	@Resource
 	private IPmPopulationinformationDao pmPopulationinformationDao;
 
-	public void setPmPopulationinformationDao(IPmPopulationinformationDao pmPopulationinformationDao) {
-		this.pmPopulationinformationDao = pmPopulationinformationDao;
-	}
 }

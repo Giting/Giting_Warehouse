@@ -32,9 +32,5 @@ public class BfRoomAction extends ActionSupport{
 	@Resource
 	private IBfRoomService bfRoomService;
 
-	public void setBfRoomService(IBfRoomService bfRoomService) {
-		this.bfRoomService = bfRoomService;
-	}
-	
 	
 }
