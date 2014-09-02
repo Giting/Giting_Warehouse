@@ -3,7 +3,7 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 
 /**
- * BeDictionarydata entity. @author MyEclipse Persistence Tools
+ * 字典数据表
  */
 
 public class BeDictionarydata implements java.io.Serializable {

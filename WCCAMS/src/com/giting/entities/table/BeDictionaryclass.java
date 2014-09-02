@@ -5,14 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * BeDictionaryclass entity. @author MyEclipse Persistence Tools
+ * 字典类型表
  */
-
 public class BeDictionaryclass implements java.io.Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	private String pkId;

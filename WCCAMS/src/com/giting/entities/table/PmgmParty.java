@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 /**
- * PmgmParty entity. @author MyEclipse Persistence Tools
+ * 党员信息表
  */
 
 public class PmgmParty implements java.io.Serializable {

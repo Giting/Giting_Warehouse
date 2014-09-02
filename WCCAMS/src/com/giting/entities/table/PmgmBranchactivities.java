@@ -3,7 +3,7 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 
 /**
- * PmgmBranchactivities entity. @author MyEclipse Persistence Tools
+ * 党支部活动表
  */
 
 public class PmgmBranchactivities implements java.io.Serializable {
