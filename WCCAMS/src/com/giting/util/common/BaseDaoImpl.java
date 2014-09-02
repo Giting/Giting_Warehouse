@@ -22,6 +22,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.stereotype.Repository;
 
 /**
  * @ClassName: BaseDaoImpl
@@ -30,6 +31,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
  * @date 2014年4月30日 下午12:20:10
  * 
  */
+@Repository("baseDao")
 public class BaseDaoImpl implements IBaseDao {
 
 	private Logger logger = Logger.getLogger(this.getClass());
