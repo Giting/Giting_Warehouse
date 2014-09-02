@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * PmgmBranch entity. @author MyEclipse Persistence Tools
+ * 党支部表
  */
 
 public class PmgmBranch implements java.io.Serializable {
