@@ -3,18 +3,23 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * PmFamily entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pm_family", catalog = "wccams")
 public class PmFamily implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private String daFnumber;
 	private String daHouseheadName;
@@ -37,8 +42,9 @@ public class PmFamily implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set pmFamilyrooms = new HashSet(0);
-	private Set pmPopulationinformations = new HashSet(0);
+	private Set<PmFamilyroom> pmFamilyrooms = new HashSet<PmFamilyroom>(0);
+	private Set<PmPopulationinformation> pmPopulationinformations = new HashSet<PmPopulationinformation>(
+			0);
 
 	// Constructors
 
@@ -61,7 +67,8 @@ public class PmFamily implements java.io.Serializable {
 			Float daConstructionArea, Integer daFamilySize, Integer daMan,
 			Integer daWoman, Integer daOutNumber, String daRemark,
 			Boolean isDelete, Timestamp dtDate, Integer rkOrder,
-			Timestamp ctTime, Set pmFamilyrooms, Set pmPopulationinformations) {
+			Timestamp ctTime, Set<PmFamilyroom> pmFamilyrooms,
+			Set<PmPopulationinformation> pmPopulationinformations) {
 		this.pkId = pkId;
 		this.daFnumber = daFnumber;
 		this.daHouseheadName = daHouseheadName;
@@ -89,7 +96,8 @@ public class PmFamily implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -98,6 +106,7 @@ public class PmFamily implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "da_Fnumber", length = 100)
 	public String getDaFnumber() {
 		return this.daFnumber;
 	}
@@ -106,6 +115,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daFnumber = daFnumber;
 	}
 
+	@Column(name = "da_HouseheadName", length = 20)
 	public String getDaHouseheadName() {
 		return this.daHouseheadName;
 	}
@@ -114,6 +124,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daHouseheadName = daHouseheadName;
 	}
 
+	@Column(name = "fk_FamilyStatus_id", length = 36)
 	public String getFkFamilyStatusId() {
 		return this.fkFamilyStatusId;
 	}
@@ -122,6 +133,7 @@ public class PmFamily implements java.io.Serializable {
 		this.fkFamilyStatusId = fkFamilyStatusId;
 	}
 
+	@Column(name = "da_HomePhone", length = 20)
 	public String getDaHomePhone() {
 		return this.daHomePhone;
 	}
@@ -130,6 +142,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daHomePhone = daHomePhone;
 	}
 
+	@Column(name = "da_CellPhone", length = 20)
 	public String getDaCellPhone() {
 		return this.daCellPhone;
 	}
@@ -138,6 +151,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daCellPhone = daCellPhone;
 	}
 
+	@Column(name = "fk_AccommodationType_id", length = 36)
 	public String getFkAccommodationTypeId() {
 		return this.fkAccommodationTypeId;
 	}
@@ -146,6 +160,7 @@ public class PmFamily implements java.io.Serializable {
 		this.fkAccommodationTypeId = fkAccommodationTypeId;
 	}
 
+	@Column(name = "da_HomeAddress", length = 100)
 	public String getDaHomeAddress() {
 		return this.daHomeAddress;
 	}
@@ -154,6 +169,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daHomeAddress = daHomeAddress;
 	}
 
+	@Column(name = "da_IPPF")
 	public Boolean getDaIppf() {
 		return this.daIppf;
 	}
@@ -162,6 +178,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daIppf = daIppf;
 	}
 
+	@Column(name = "fk_HousingStatus_id", length = 36)
 	public String getFkHousingStatusId() {
 		return this.fkHousingStatusId;
 	}
@@ -170,6 +187,7 @@ public class PmFamily implements java.io.Serializable {
 		this.fkHousingStatusId = fkHousingStatusId;
 	}
 
+	@Column(name = "da_RoomNumber", length = 20)
 	public String getDaRoomNumber() {
 		return this.daRoomNumber;
 	}
@@ -178,6 +196,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daRoomNumber = daRoomNumber;
 	}
 
+	@Column(name = "da_LivingArea", precision = 12, scale = 0)
 	public Float getDaLivingArea() {
 		return this.daLivingArea;
 	}
@@ -186,6 +205,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daLivingArea = daLivingArea;
 	}
 
+	@Column(name = "da_ConstructionArea", precision = 12, scale = 0)
 	public Float getDaConstructionArea() {
 		return this.daConstructionArea;
 	}
@@ -194,6 +214,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daConstructionArea = daConstructionArea;
 	}
 
+	@Column(name = "da_FamilySize")
 	public Integer getDaFamilySize() {
 		return this.daFamilySize;
 	}
@@ -202,6 +223,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daFamilySize = daFamilySize;
 	}
 
+	@Column(name = "da_Man")
 	public Integer getDaMan() {
 		return this.daMan;
 	}
@@ -210,6 +232,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daMan = daMan;
 	}
 
+	@Column(name = "da_Woman")
 	public Integer getDaWoman() {
 		return this.daWoman;
 	}
@@ -218,6 +241,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daWoman = daWoman;
 	}
 
+	@Column(name = "da_OutNumber")
 	public Integer getDaOutNumber() {
 		return this.daOutNumber;
 	}
@@ -226,6 +250,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daOutNumber = daOutNumber;
 	}
 
+	@Column(name = "da_Remark", length = 100)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -234,6 +259,7 @@ public class PmFamily implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -242,6 +268,7 @@ public class PmFamily implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -250,6 +277,7 @@ public class PmFamily implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -258,6 +286,7 @@ public class PmFamily implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -266,19 +295,22 @@ public class PmFamily implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getPmFamilyrooms() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmFamily")
+	public Set<PmFamilyroom> getPmFamilyrooms() {
 		return this.pmFamilyrooms;
 	}
 
-	public void setPmFamilyrooms(Set pmFamilyrooms) {
+	public void setPmFamilyrooms(Set<PmFamilyroom> pmFamilyrooms) {
 		this.pmFamilyrooms = pmFamilyrooms;
 	}
 
-	public Set getPmPopulationinformations() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmFamily")
+	public Set<PmPopulationinformation> getPmPopulationinformations() {
 		return this.pmPopulationinformations;
 	}
 
-	public void setPmPopulationinformations(Set pmPopulationinformations) {
+	public void setPmPopulationinformations(
+			Set<PmPopulationinformation> pmPopulationinformations) {
 		this.pmPopulationinformations = pmPopulationinformations;
 	}
 

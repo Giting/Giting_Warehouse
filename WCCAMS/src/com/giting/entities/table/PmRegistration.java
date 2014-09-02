@@ -2,18 +2,25 @@ package com.giting.entities.table;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * PmRegistration entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pm_registration", catalog = "wccams")
 public class PmRegistration implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private PmPopulationinformation pmPopulationinformation;
 	private String fkRegistrationTypeId;
@@ -60,7 +67,8 @@ public class PmRegistration implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -69,6 +77,8 @@ public class PmRegistration implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_PopulationInformation_id")
 	public PmPopulationinformation getPmPopulationinformation() {
 		return this.pmPopulationinformation;
 	}
@@ -78,6 +88,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.pmPopulationinformation = pmPopulationinformation;
 	}
 
+	@Column(name = "fk_RegistrationType_id", length = 36)
 	public String getFkRegistrationTypeId() {
 		return this.fkRegistrationTypeId;
 	}
@@ -86,6 +97,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.fkRegistrationTypeId = fkRegistrationTypeId;
 	}
 
+	@Column(name = "da_RegistrationReason", length = 100)
 	public String getDaRegistrationReason() {
 		return this.daRegistrationReason;
 	}
@@ -94,6 +106,8 @@ public class PmRegistration implements java.io.Serializable {
 		this.daRegistrationReason = daRegistrationReason;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_RegistrationTime", length = 10)
 	public Date getDaRegistrationTime() {
 		return this.daRegistrationTime;
 	}
@@ -102,6 +116,8 @@ public class PmRegistration implements java.io.Serializable {
 		this.daRegistrationTime = daRegistrationTime;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_EndTime", length = 10)
 	public Date getDaEndTime() {
 		return this.daEndTime;
 	}
@@ -110,6 +126,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.daEndTime = daEndTime;
 	}
 
+	@Column(name = "da_Remark", length = 100)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -118,6 +135,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -126,6 +144,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -134,6 +153,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -142,6 +162,7 @@ public class PmRegistration implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

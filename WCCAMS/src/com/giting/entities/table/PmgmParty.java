@@ -2,18 +2,25 @@ package com.giting.entities.table;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
- * 党员信息表
+ * PmgmParty entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pmgm_party", catalog = "wccams")
 public class PmgmParty implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private PmgmBranch pmgmBranch;
 	private PmPopulationinformation pmPopulationinformation;
@@ -70,7 +77,8 @@ public class PmgmParty implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -79,6 +87,8 @@ public class PmgmParty implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Branch_id")
 	public PmgmBranch getPmgmBranch() {
 		return this.pmgmBranch;
 	}
@@ -87,6 +97,8 @@ public class PmgmParty implements java.io.Serializable {
 		this.pmgmBranch = pmgmBranch;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_PopulationInformation_id")
 	public PmPopulationinformation getPmPopulationinformation() {
 		return this.pmPopulationinformation;
 	}
@@ -96,6 +108,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.pmPopulationinformation = pmPopulationinformation;
 	}
 
+	@Column(name = "da_Socialclass", length = 50)
 	public String getDaSocialclass() {
 		return this.daSocialclass;
 	}
@@ -104,6 +117,8 @@ public class PmgmParty implements java.io.Serializable {
 		this.daSocialclass = daSocialclass;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_JoinDate", length = 10)
 	public Date getDaJoinDate() {
 		return this.daJoinDate;
 	}
@@ -112,6 +127,8 @@ public class PmgmParty implements java.io.Serializable {
 		this.daJoinDate = daJoinDate;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_RegularizedDate", length = 10)
 	public Date getDaRegularizedDate() {
 		return this.daRegularizedDate;
 	}
@@ -120,6 +137,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daRegularizedDate = daRegularizedDate;
 	}
 
+	@Column(name = "da_Positivecases", length = 50)
 	public String getDaPositivecases() {
 		return this.daPositivecases;
 	}
@@ -128,6 +146,8 @@ public class PmgmParty implements java.io.Serializable {
 		this.daPositivecases = daPositivecases;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_BranchDate", length = 10)
 	public Date getDaBranchDate() {
 		return this.daBranchDate;
 	}
@@ -136,6 +156,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daBranchDate = daBranchDate;
 	}
 
+	@Column(name = "da_PoliceStation", length = 100)
 	public String getDaPoliceStation() {
 		return this.daPoliceStation;
 	}
@@ -144,6 +165,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daPoliceStation = daPoliceStation;
 	}
 
+	@Column(name = "da_Dues", precision = 8)
 	public Double getDaDues() {
 		return this.daDues;
 	}
@@ -152,6 +174,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daDues = daDues;
 	}
 
+	@Column(name = "da_Jobs", length = 50)
 	public String getDaJobs() {
 		return this.daJobs;
 	}
@@ -160,6 +183,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daJobs = daJobs;
 	}
 
+	@Column(name = "da_Linecase", length = 20)
 	public String getDaLinecase() {
 		return this.daLinecase;
 	}
@@ -168,6 +192,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.daLinecase = daLinecase;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -176,6 +201,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -184,6 +210,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -192,6 +219,7 @@ public class PmgmParty implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

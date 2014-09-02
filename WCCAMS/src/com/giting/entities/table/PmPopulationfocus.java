@@ -2,18 +2,25 @@ package com.giting.entities.table;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * PmPopulationfocus entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pm_populationfocus", catalog = "wccams")
 public class PmPopulationfocus implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private PmPopulationinformation pmPopulationinformation;
 	private String daFocusNumber;
@@ -83,7 +90,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -92,6 +100,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_PopulationInformation_id")
 	public PmPopulationinformation getPmPopulationinformation() {
 		return this.pmPopulationinformation;
 	}
@@ -101,6 +111,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.pmPopulationinformation = pmPopulationinformation;
 	}
 
+	@Column(name = "da_FocusNumber", length = 50)
 	public String getDaFocusNumber() {
 		return this.daFocusNumber;
 	}
@@ -109,6 +120,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daFocusNumber = daFocusNumber;
 	}
 
+	@Column(name = "fk_Demographic_id", length = 36)
 	public String getFkDemographicId() {
 		return this.fkDemographicId;
 	}
@@ -117,6 +129,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.fkDemographicId = fkDemographicId;
 	}
 
+	@Column(name = "fk_RegulatoryReasons_id", length = 36)
 	public String getFkRegulatoryReasonsId() {
 		return this.fkRegulatoryReasonsId;
 	}
@@ -125,6 +138,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.fkRegulatoryReasonsId = fkRegulatoryReasonsId;
 	}
 
+	@Column(name = "da_CrimeType", length = 50)
 	public String getDaCrimeType() {
 		return this.daCrimeType;
 	}
@@ -133,6 +147,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daCrimeType = daCrimeType;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_CrimeDate", length = 10)
 	public Date getDaCrimeDate() {
 		return this.daCrimeDate;
 	}
@@ -141,6 +157,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daCrimeDate = daCrimeDate;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_JailDate", length = 10)
 	public Date getDaJailDate() {
 		return this.daJailDate;
 	}
@@ -149,6 +167,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daJailDate = daJailDate;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_PrisonDate", length = 10)
 	public Date getDaPrisonDate() {
 		return this.daPrisonDate;
 	}
@@ -157,6 +177,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daPrisonDate = daPrisonDate;
 	}
 
+	@Column(name = "da_Sentence", length = 50)
 	public String getDaSentence() {
 		return this.daSentence;
 	}
@@ -165,6 +186,8 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daSentence = daSentence;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_DecisionTime", length = 10)
 	public Date getDaDecisionTime() {
 		return this.daDecisionTime;
 	}
@@ -173,6 +196,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daDecisionTime = daDecisionTime;
 	}
 
+	@Column(name = "fk_TrialResults_id", length = 36)
 	public String getFkTrialResultsId() {
 		return this.fkTrialResultsId;
 	}
@@ -181,6 +205,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.fkTrialResultsId = fkTrialResultsId;
 	}
 
+	@Column(name = "da_CourtVerdict", length = 50)
 	public String getDaCourtVerdict() {
 		return this.daCourtVerdict;
 	}
@@ -189,6 +214,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daCourtVerdict = daCourtVerdict;
 	}
 
+	@Column(name = "fk_AbsencesType_id", length = 36)
 	public String getFkAbsencesTypeId() {
 		return this.fkAbsencesTypeId;
 	}
@@ -197,6 +223,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.fkAbsencesTypeId = fkAbsencesTypeId;
 	}
 
+	@Column(name = "da_Detached")
 	public Boolean getDaDetached() {
 		return this.daDetached;
 	}
@@ -205,6 +232,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daDetached = daDetached;
 	}
 
+	@Column(name = "da_CurrentAddress", length = 50)
 	public String getDaCurrentAddress() {
 		return this.daCurrentAddress;
 	}
@@ -213,6 +241,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daCurrentAddress = daCurrentAddress;
 	}
 
+	@Column(name = "da_Remark", length = 500)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -221,6 +250,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -229,6 +259,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -237,6 +268,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -245,6 +277,7 @@ public class PmPopulationfocus implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

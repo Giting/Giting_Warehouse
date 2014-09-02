@@ -4,18 +4,27 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * PmPopulationinformation entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pm_populationinformation", catalog = "wccams")
 public class PmPopulationinformation implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private PmFamily pmFamily;
 	private String daName;
@@ -63,13 +72,14 @@ public class PmPopulationinformation implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set pmRegistrations = new HashSet(0);
-	private Set pmRegistrationtypesForFkTpopulationInformationId = new HashSet(
+	private Set<PmRegistration> pmRegistrations = new HashSet<PmRegistration>(0);
+	private Set<PmRegistrationtype> pmRegistrationtypesForFkTpopulationInformationId = new HashSet<PmRegistrationtype>(
 			0);
-	private Set pmRegistrationtypesForFkFpopulationInformationId = new HashSet(
+	private Set<PmRegistrationtype> pmRegistrationtypesForFkFpopulationInformationId = new HashSet<PmRegistrationtype>(
 			0);
-	private Set pmPopulationfocuses = new HashSet(0);
-	private Set pmgmParties = new HashSet(0);
+	private Set<PmPopulationfocus> pmPopulationfocuses = new HashSet<PmPopulationfocus>(
+			0);
+	private Set<PmgmParty> pmgmParties = new HashSet<PmgmParty>(0);
 
 	// Constructors
 
@@ -87,29 +97,59 @@ public class PmPopulationinformation implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public PmPopulationinformation(String pkId, PmFamily pmFamily,
-			String daName, String daIdCard, String daBirthDate,
-			String fkAccountTypeId, Date fkSexId, String fkMovedId,
-			String fkHouseRelationId, String fkNationalId,
-			String fkEducationId, String fkPersonnelCategoryId,
-			String daWorkUnits, String fkMaritalStatusId, Date daMaritalDate,
-			String fkPoliticalAffiliationId, String fkVeteranStatusId,
-			String daDomicile, String daBirthplace, String daCurrentAddress,
-			String fkHealthStatusId, Boolean daWhetherOut, Date daIntoComDate,
-			String fkUnemploymentId, String fkDisabilityRatingId,
-			String fkDisadvantagedGroupsId, String fkDemographicId,
-			String fkReligionId, String daOnechildNumber,
-			String fkChildBonusId, String daPensionInsurance,
-			String daMedicalInsurance, Boolean daOtherInfsurance,
-			String daSocieties, String daCommunitySchool, String fkEmployeesId,
-			Boolean daLivingAlone, String daRemark,
-			String fkPopulationStatusId, Timestamp daLogoutDate,
-			String fkLogoutId, String daLogoutRemark, String daImgUrl,
-			Boolean isDelete, Timestamp dtDate, Integer rkOrder,
-			Timestamp ctTime, Set pmRegistrations,
-			Set pmRegistrationtypesForFkTpopulationInformationId,
-			Set pmRegistrationtypesForFkFpopulationInformationId,
-			Set pmPopulationfocuses, Set pmgmParties) {
+	public PmPopulationinformation(
+			String pkId,
+			PmFamily pmFamily,
+			String daName,
+			String daIdCard,
+			String daBirthDate,
+			String fkAccountTypeId,
+			Date fkSexId,
+			String fkMovedId,
+			String fkHouseRelationId,
+			String fkNationalId,
+			String fkEducationId,
+			String fkPersonnelCategoryId,
+			String daWorkUnits,
+			String fkMaritalStatusId,
+			Date daMaritalDate,
+			String fkPoliticalAffiliationId,
+			String fkVeteranStatusId,
+			String daDomicile,
+			String daBirthplace,
+			String daCurrentAddress,
+			String fkHealthStatusId,
+			Boolean daWhetherOut,
+			Date daIntoComDate,
+			String fkUnemploymentId,
+			String fkDisabilityRatingId,
+			String fkDisadvantagedGroupsId,
+			String fkDemographicId,
+			String fkReligionId,
+			String daOnechildNumber,
+			String fkChildBonusId,
+			String daPensionInsurance,
+			String daMedicalInsurance,
+			Boolean daOtherInfsurance,
+			String daSocieties,
+			String daCommunitySchool,
+			String fkEmployeesId,
+			Boolean daLivingAlone,
+			String daRemark,
+			String fkPopulationStatusId,
+			Timestamp daLogoutDate,
+			String fkLogoutId,
+			String daLogoutRemark,
+			String daImgUrl,
+			Boolean isDelete,
+			Timestamp dtDate,
+			Integer rkOrder,
+			Timestamp ctTime,
+			Set<PmRegistration> pmRegistrations,
+			Set<PmRegistrationtype> pmRegistrationtypesForFkTpopulationInformationId,
+			Set<PmRegistrationtype> pmRegistrationtypesForFkFpopulationInformationId,
+			Set<PmPopulationfocus> pmPopulationfocuses,
+			Set<PmgmParty> pmgmParties) {
 		this.pkId = pkId;
 		this.pmFamily = pmFamily;
 		this.daName = daName;
@@ -165,7 +205,8 @@ public class PmPopulationinformation implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -174,6 +215,8 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Family_id")
 	public PmFamily getPmFamily() {
 		return this.pmFamily;
 	}
@@ -182,6 +225,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.pmFamily = pmFamily;
 	}
 
+	@Column(name = "da_Name", length = 20)
 	public String getDaName() {
 		return this.daName;
 	}
@@ -190,6 +234,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daName = daName;
 	}
 
+	@Column(name = "da_IdCard", length = 36)
 	public String getDaIdCard() {
 		return this.daIdCard;
 	}
@@ -198,6 +243,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daIdCard = daIdCard;
 	}
 
+	@Column(name = "da_BirthDate", length = 36)
 	public String getDaBirthDate() {
 		return this.daBirthDate;
 	}
@@ -206,6 +252,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daBirthDate = daBirthDate;
 	}
 
+	@Column(name = "fk_AccountType_id", length = 20)
 	public String getFkAccountTypeId() {
 		return this.fkAccountTypeId;
 	}
@@ -214,6 +261,8 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkAccountTypeId = fkAccountTypeId;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fk_Sex_id", length = 10)
 	public Date getFkSexId() {
 		return this.fkSexId;
 	}
@@ -222,6 +271,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkSexId = fkSexId;
 	}
 
+	@Column(name = "fk_Moved_id", length = 36)
 	public String getFkMovedId() {
 		return this.fkMovedId;
 	}
@@ -230,6 +280,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkMovedId = fkMovedId;
 	}
 
+	@Column(name = "fk_HouseRelation_id", length = 36)
 	public String getFkHouseRelationId() {
 		return this.fkHouseRelationId;
 	}
@@ -238,6 +289,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkHouseRelationId = fkHouseRelationId;
 	}
 
+	@Column(name = "fk_National_id", length = 36)
 	public String getFkNationalId() {
 		return this.fkNationalId;
 	}
@@ -246,6 +298,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkNationalId = fkNationalId;
 	}
 
+	@Column(name = "fk_Education_id", length = 36)
 	public String getFkEducationId() {
 		return this.fkEducationId;
 	}
@@ -254,6 +307,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkEducationId = fkEducationId;
 	}
 
+	@Column(name = "fk_PersonnelCategory_id", length = 36)
 	public String getFkPersonnelCategoryId() {
 		return this.fkPersonnelCategoryId;
 	}
@@ -262,6 +316,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkPersonnelCategoryId = fkPersonnelCategoryId;
 	}
 
+	@Column(name = "da_WorkUnits", length = 50)
 	public String getDaWorkUnits() {
 		return this.daWorkUnits;
 	}
@@ -270,6 +325,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daWorkUnits = daWorkUnits;
 	}
 
+	@Column(name = "fk_MaritalStatus_id", length = 36)
 	public String getFkMaritalStatusId() {
 		return this.fkMaritalStatusId;
 	}
@@ -278,6 +334,8 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkMaritalStatusId = fkMaritalStatusId;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_MaritalDate", length = 10)
 	public Date getDaMaritalDate() {
 		return this.daMaritalDate;
 	}
@@ -286,6 +344,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daMaritalDate = daMaritalDate;
 	}
 
+	@Column(name = "fk_PoliticalAffiliation_id", length = 36)
 	public String getFkPoliticalAffiliationId() {
 		return this.fkPoliticalAffiliationId;
 	}
@@ -294,6 +353,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkPoliticalAffiliationId = fkPoliticalAffiliationId;
 	}
 
+	@Column(name = "fk_VeteranStatus_id", length = 36)
 	public String getFkVeteranStatusId() {
 		return this.fkVeteranStatusId;
 	}
@@ -302,6 +362,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkVeteranStatusId = fkVeteranStatusId;
 	}
 
+	@Column(name = "da_Domicile", length = 80)
 	public String getDaDomicile() {
 		return this.daDomicile;
 	}
@@ -310,6 +371,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daDomicile = daDomicile;
 	}
 
+	@Column(name = "da_Birthplace", length = 80)
 	public String getDaBirthplace() {
 		return this.daBirthplace;
 	}
@@ -318,6 +380,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daBirthplace = daBirthplace;
 	}
 
+	@Column(name = "da_CurrentAddress", length = 80)
 	public String getDaCurrentAddress() {
 		return this.daCurrentAddress;
 	}
@@ -326,6 +389,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daCurrentAddress = daCurrentAddress;
 	}
 
+	@Column(name = "fk_HealthStatus_id", length = 36)
 	public String getFkHealthStatusId() {
 		return this.fkHealthStatusId;
 	}
@@ -334,6 +398,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkHealthStatusId = fkHealthStatusId;
 	}
 
+	@Column(name = "da_WhetherOut")
 	public Boolean getDaWhetherOut() {
 		return this.daWhetherOut;
 	}
@@ -342,6 +407,8 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daWhetherOut = daWhetherOut;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_IntoComDate", length = 10)
 	public Date getDaIntoComDate() {
 		return this.daIntoComDate;
 	}
@@ -350,6 +417,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daIntoComDate = daIntoComDate;
 	}
 
+	@Column(name = "fk_Unemployment_id", length = 36)
 	public String getFkUnemploymentId() {
 		return this.fkUnemploymentId;
 	}
@@ -358,6 +426,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkUnemploymentId = fkUnemploymentId;
 	}
 
+	@Column(name = "fk_DisabilityRating_id", length = 36)
 	public String getFkDisabilityRatingId() {
 		return this.fkDisabilityRatingId;
 	}
@@ -366,6 +435,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkDisabilityRatingId = fkDisabilityRatingId;
 	}
 
+	@Column(name = "fk_DisadvantagedGroups_id", length = 36)
 	public String getFkDisadvantagedGroupsId() {
 		return this.fkDisadvantagedGroupsId;
 	}
@@ -374,6 +444,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkDisadvantagedGroupsId = fkDisadvantagedGroupsId;
 	}
 
+	@Column(name = "fk_Demographic_id", length = 36)
 	public String getFkDemographicId() {
 		return this.fkDemographicId;
 	}
@@ -382,6 +453,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkDemographicId = fkDemographicId;
 	}
 
+	@Column(name = "fk_Religion_id", length = 36)
 	public String getFkReligionId() {
 		return this.fkReligionId;
 	}
@@ -390,6 +462,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkReligionId = fkReligionId;
 	}
 
+	@Column(name = "da_OnechildNumber", length = 50)
 	public String getDaOnechildNumber() {
 		return this.daOnechildNumber;
 	}
@@ -398,6 +471,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daOnechildNumber = daOnechildNumber;
 	}
 
+	@Column(name = "fk_ChildBonus_id", length = 36)
 	public String getFkChildBonusId() {
 		return this.fkChildBonusId;
 	}
@@ -406,6 +480,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkChildBonusId = fkChildBonusId;
 	}
 
+	@Column(name = "da_PensionInsurance", length = 50)
 	public String getDaPensionInsurance() {
 		return this.daPensionInsurance;
 	}
@@ -414,6 +489,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daPensionInsurance = daPensionInsurance;
 	}
 
+	@Column(name = "da_MedicalInsurance", length = 50)
 	public String getDaMedicalInsurance() {
 		return this.daMedicalInsurance;
 	}
@@ -422,6 +498,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daMedicalInsurance = daMedicalInsurance;
 	}
 
+	@Column(name = "da_OtherInfsurance")
 	public Boolean getDaOtherInfsurance() {
 		return this.daOtherInfsurance;
 	}
@@ -430,6 +507,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daOtherInfsurance = daOtherInfsurance;
 	}
 
+	@Column(name = "da_Societies", length = 50)
 	public String getDaSocieties() {
 		return this.daSocieties;
 	}
@@ -438,6 +516,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daSocieties = daSocieties;
 	}
 
+	@Column(name = "da_CommunitySchool", length = 50)
 	public String getDaCommunitySchool() {
 		return this.daCommunitySchool;
 	}
@@ -446,6 +525,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daCommunitySchool = daCommunitySchool;
 	}
 
+	@Column(name = "fk_Employees_id", length = 36)
 	public String getFkEmployeesId() {
 		return this.fkEmployeesId;
 	}
@@ -454,6 +534,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkEmployeesId = fkEmployeesId;
 	}
 
+	@Column(name = "da_LivingAlone")
 	public Boolean getDaLivingAlone() {
 		return this.daLivingAlone;
 	}
@@ -462,6 +543,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daLivingAlone = daLivingAlone;
 	}
 
+	@Column(name = "da_Remark", length = 100)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -470,6 +552,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Column(name = "fk_PopulationStatus_id", length = 36)
 	public String getFkPopulationStatusId() {
 		return this.fkPopulationStatusId;
 	}
@@ -478,6 +561,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkPopulationStatusId = fkPopulationStatusId;
 	}
 
+	@Column(name = "da_LogoutDate", nullable = false, length = 19)
 	public Timestamp getDaLogoutDate() {
 		return this.daLogoutDate;
 	}
@@ -486,6 +570,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daLogoutDate = daLogoutDate;
 	}
 
+	@Column(name = "fk_Logout_id", length = 36)
 	public String getFkLogoutId() {
 		return this.fkLogoutId;
 	}
@@ -494,6 +579,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.fkLogoutId = fkLogoutId;
 	}
 
+	@Column(name = "da_LogoutRemark", length = 100)
 	public String getDaLogoutRemark() {
 		return this.daLogoutRemark;
 	}
@@ -502,6 +588,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daLogoutRemark = daLogoutRemark;
 	}
 
+	@Column(name = "da_ImgUrl", length = 80)
 	public String getDaImgUrl() {
 		return this.daImgUrl;
 	}
@@ -510,6 +597,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.daImgUrl = daImgUrl;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -518,6 +606,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -526,6 +615,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -534,6 +624,7 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -542,45 +633,51 @@ public class PmPopulationinformation implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getPmRegistrations() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmPopulationinformation")
+	public Set<PmRegistration> getPmRegistrations() {
 		return this.pmRegistrations;
 	}
 
-	public void setPmRegistrations(Set pmRegistrations) {
+	public void setPmRegistrations(Set<PmRegistration> pmRegistrations) {
 		this.pmRegistrations = pmRegistrations;
 	}
 
-	public Set getPmRegistrationtypesForFkTpopulationInformationId() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmPopulationinformationByFkTpopulationInformationId")
+	public Set<PmRegistrationtype> getPmRegistrationtypesForFkTpopulationInformationId() {
 		return this.pmRegistrationtypesForFkTpopulationInformationId;
 	}
 
 	public void setPmRegistrationtypesForFkTpopulationInformationId(
-			Set pmRegistrationtypesForFkTpopulationInformationId) {
+			Set<PmRegistrationtype> pmRegistrationtypesForFkTpopulationInformationId) {
 		this.pmRegistrationtypesForFkTpopulationInformationId = pmRegistrationtypesForFkTpopulationInformationId;
 	}
 
-	public Set getPmRegistrationtypesForFkFpopulationInformationId() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmPopulationinformationByFkFpopulationInformationId")
+	public Set<PmRegistrationtype> getPmRegistrationtypesForFkFpopulationInformationId() {
 		return this.pmRegistrationtypesForFkFpopulationInformationId;
 	}
 
 	public void setPmRegistrationtypesForFkFpopulationInformationId(
-			Set pmRegistrationtypesForFkFpopulationInformationId) {
+			Set<PmRegistrationtype> pmRegistrationtypesForFkFpopulationInformationId) {
 		this.pmRegistrationtypesForFkFpopulationInformationId = pmRegistrationtypesForFkFpopulationInformationId;
 	}
 
-	public Set getPmPopulationfocuses() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmPopulationinformation")
+	public Set<PmPopulationfocus> getPmPopulationfocuses() {
 		return this.pmPopulationfocuses;
 	}
 
-	public void setPmPopulationfocuses(Set pmPopulationfocuses) {
+	public void setPmPopulationfocuses(
+			Set<PmPopulationfocus> pmPopulationfocuses) {
 		this.pmPopulationfocuses = pmPopulationfocuses;
 	}
 
-	public Set getPmgmParties() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "pmPopulationinformation")
+	public Set<PmgmParty> getPmgmParties() {
 		return this.pmgmParties;
 	}
 
-	public void setPmgmParties(Set pmgmParties) {
+	public void setPmgmParties(Set<PmgmParty> pmgmParties) {
 		this.pmgmParties = pmgmParties;
 	}
 

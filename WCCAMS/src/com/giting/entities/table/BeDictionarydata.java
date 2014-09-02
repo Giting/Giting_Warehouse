@@ -1,17 +1,22 @@
 package com.giting.entities.table;
 
 import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
- * 字典数据表
+ * BeDictionarydata entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "be_dictionarydata", catalog = "wccams", uniqueConstraints = @UniqueConstraint(columnNames = "fk_Dictionaryclass_id"))
 public class BeDictionarydata implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	// Fields
 
 	private String pkId;
 	private BeDictionaryclass beDictionaryclass;
@@ -55,7 +60,8 @@ public class BeDictionarydata implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -64,6 +70,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "beDictionarydata")
 	public BeDictionaryclass getBeDictionaryclass() {
 		return this.beDictionaryclass;
 	}
@@ -72,6 +79,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.beDictionaryclass = beDictionaryclass;
 	}
 
+	@Column(name = "dictdata_name", length = 50)
 	public String getDictdataName() {
 		return this.dictdataName;
 	}
@@ -80,6 +88,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.dictdataName = dictdataName;
 	}
 
+	@Column(name = "dictdata_value", length = 5)
 	public String getDictdataValue() {
 		return this.dictdataValue;
 	}
@@ -88,6 +97,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.dictdataValue = dictdataValue;
 	}
 
+	@Column(name = "is_Fixed")
 	public Boolean getIsFixed() {
 		return this.isFixed;
 	}
@@ -96,6 +106,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.isFixed = isFixed;
 	}
 
+	@Column(name = "is_Cancle")
 	public Boolean getIsCancle() {
 		return this.isCancle;
 	}
@@ -104,6 +115,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.isCancle = isCancle;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -112,6 +124,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -120,6 +133,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -128,6 +142,7 @@ public class BeDictionarydata implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

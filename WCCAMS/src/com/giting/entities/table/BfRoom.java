@@ -3,17 +3,24 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * BfRoom entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "bf_room", catalog = "wccams")
 public class BfRoom implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	// Fields
 
 	private String pkId;
 	private BfUnit bfUnit;
@@ -32,7 +39,7 @@ public class BfRoom implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set pmFamilyrooms = new HashSet(0);
+	private Set<PmFamilyroom> pmFamilyrooms = new HashSet<PmFamilyroom>(0);
 
 	// Constructors
 
@@ -53,7 +60,7 @@ public class BfRoom implements java.io.Serializable {
 			Float daComprisingArea, Float daPoolArea, Float daBalconyArea,
 			String fkTowardId, Integer daStorey, String fkApartmentId,
 			String daRemark, Boolean isDelete, Timestamp dtDate,
-			Integer rkOrder, Timestamp ctTime, Set pmFamilyrooms) {
+			Integer rkOrder, Timestamp ctTime, Set<PmFamilyroom> pmFamilyrooms) {
 		this.pkId = pkId;
 		this.bfUnit = bfUnit;
 		this.daRnumber = daRnumber;
@@ -75,7 +82,8 @@ public class BfRoom implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -84,6 +92,8 @@ public class BfRoom implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Unit_id")
 	public BfUnit getBfUnit() {
 		return this.bfUnit;
 	}
@@ -92,6 +102,7 @@ public class BfRoom implements java.io.Serializable {
 		this.bfUnit = bfUnit;
 	}
 
+	@Column(name = "da_Rnumber", length = 50)
 	public String getDaRnumber() {
 		return this.daRnumber;
 	}
@@ -100,6 +111,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daRnumber = daRnumber;
 	}
 
+	@Column(name = "da_RoomName", length = 100)
 	public String getDaRoomName() {
 		return this.daRoomName;
 	}
@@ -108,6 +120,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daRoomName = daRoomName;
 	}
 
+	@Column(name = "da_Level", length = 10)
 	public String getDaLevel() {
 		return this.daLevel;
 	}
@@ -116,6 +129,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daLevel = daLevel;
 	}
 
+	@Column(name = "da_ConstructionArea", precision = 12, scale = 0)
 	public Float getDaConstructionArea() {
 		return this.daConstructionArea;
 	}
@@ -124,6 +138,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daConstructionArea = daConstructionArea;
 	}
 
+	@Column(name = "da_ComprisingArea", precision = 12, scale = 0)
 	public Float getDaComprisingArea() {
 		return this.daComprisingArea;
 	}
@@ -132,6 +147,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daComprisingArea = daComprisingArea;
 	}
 
+	@Column(name = "da_PoolArea", precision = 12, scale = 0)
 	public Float getDaPoolArea() {
 		return this.daPoolArea;
 	}
@@ -140,6 +156,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daPoolArea = daPoolArea;
 	}
 
+	@Column(name = "da_BalconyArea", precision = 12, scale = 0)
 	public Float getDaBalconyArea() {
 		return this.daBalconyArea;
 	}
@@ -148,6 +165,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daBalconyArea = daBalconyArea;
 	}
 
+	@Column(name = "fk_Toward_id", length = 36)
 	public String getFkTowardId() {
 		return this.fkTowardId;
 	}
@@ -156,6 +174,7 @@ public class BfRoom implements java.io.Serializable {
 		this.fkTowardId = fkTowardId;
 	}
 
+	@Column(name = "da_Storey")
 	public Integer getDaStorey() {
 		return this.daStorey;
 	}
@@ -164,6 +183,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daStorey = daStorey;
 	}
 
+	@Column(name = "fk_Apartment_id", length = 36)
 	public String getFkApartmentId() {
 		return this.fkApartmentId;
 	}
@@ -172,6 +192,7 @@ public class BfRoom implements java.io.Serializable {
 		this.fkApartmentId = fkApartmentId;
 	}
 
+	@Column(name = "da_Remark", length = 100)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -180,6 +201,7 @@ public class BfRoom implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -188,6 +210,7 @@ public class BfRoom implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -196,6 +219,7 @@ public class BfRoom implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -204,6 +228,7 @@ public class BfRoom implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -212,11 +237,12 @@ public class BfRoom implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getPmFamilyrooms() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bfRoom")
+	public Set<PmFamilyroom> getPmFamilyrooms() {
 		return this.pmFamilyrooms;
 	}
 
-	public void setPmFamilyrooms(Set pmFamilyrooms) {
+	public void setPmFamilyrooms(Set<PmFamilyroom> pmFamilyrooms) {
 		this.pmFamilyrooms = pmFamilyrooms;
 	}
 

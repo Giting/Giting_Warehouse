@@ -3,18 +3,23 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * SmDepartment entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_department", catalog = "wccams")
 public class SmDepartment implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private String daDepartmentNumber;
 	private String daDepartmentName;
@@ -23,7 +28,7 @@ public class SmDepartment implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set smEmployeeses = new HashSet(0);
+	private Set<SmEmployees> smEmployeeses = new HashSet<SmEmployees>(0);
 
 	// Constructors
 
@@ -42,7 +47,7 @@ public class SmDepartment implements java.io.Serializable {
 	public SmDepartment(String pkId, String daDepartmentNumber,
 			String daDepartmentName, String fkAcommunityId, Boolean isDelete,
 			Timestamp dtDate, Integer rkOrder, Timestamp ctTime,
-			Set smEmployeeses) {
+			Set<SmEmployees> smEmployeeses) {
 		this.pkId = pkId;
 		this.daDepartmentNumber = daDepartmentNumber;
 		this.daDepartmentName = daDepartmentName;
@@ -55,7 +60,8 @@ public class SmDepartment implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -64,6 +70,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "da_DepartmentNumber", length = 20)
 	public String getDaDepartmentNumber() {
 		return this.daDepartmentNumber;
 	}
@@ -72,6 +79,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.daDepartmentNumber = daDepartmentNumber;
 	}
 
+	@Column(name = "da_DepartmentName", length = 20)
 	public String getDaDepartmentName() {
 		return this.daDepartmentName;
 	}
@@ -80,6 +88,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.daDepartmentName = daDepartmentName;
 	}
 
+	@Column(name = "fk_Acommunity_id", length = 36)
 	public String getFkAcommunityId() {
 		return this.fkAcommunityId;
 	}
@@ -88,6 +97,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.fkAcommunityId = fkAcommunityId;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -96,6 +106,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -104,6 +115,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -112,6 +124,7 @@ public class SmDepartment implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -120,11 +133,12 @@ public class SmDepartment implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getSmEmployeeses() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "smDepartment")
+	public Set<SmEmployees> getSmEmployeeses() {
 		return this.smEmployeeses;
 	}
 
-	public void setSmEmployeeses(Set smEmployeeses) {
+	public void setSmEmployeeses(Set<SmEmployees> smEmployeeses) {
 		this.smEmployeeses = smEmployeeses;
 	}
 

@@ -2,18 +2,25 @@ package com.giting.entities.table;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * SmAnnouncement entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_announcement", catalog = "wccams")
 public class SmAnnouncement implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private SmUser smUser;
 	private String daAnnouncementNumber;
@@ -59,7 +66,8 @@ public class SmAnnouncement implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -68,6 +76,8 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_User_id")
 	public SmUser getSmUser() {
 		return this.smUser;
 	}
@@ -76,6 +86,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.smUser = smUser;
 	}
 
+	@Column(name = "da_AnnouncementNumber", length = 30)
 	public String getDaAnnouncementNumber() {
 		return this.daAnnouncementNumber;
 	}
@@ -84,6 +95,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.daAnnouncementNumber = daAnnouncementNumber;
 	}
 
+	@Column(name = "da_Announcement", length = 30)
 	public String getDaAnnouncement() {
 		return this.daAnnouncement;
 	}
@@ -92,6 +104,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.daAnnouncement = daAnnouncement;
 	}
 
+	@Column(name = "da_Connent", length = 300)
 	public String getDaConnent() {
 		return this.daConnent;
 	}
@@ -100,6 +113,8 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.daConnent = daConnent;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_Published", length = 10)
 	public Date getDaPublished() {
 		return this.daPublished;
 	}
@@ -108,6 +123,8 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.daPublished = daPublished;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_EntTime", length = 10)
 	public Date getDaEntTime() {
 		return this.daEntTime;
 	}
@@ -116,6 +133,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.daEntTime = daEntTime;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -124,6 +142,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -132,6 +151,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -140,6 +160,7 @@ public class SmAnnouncement implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

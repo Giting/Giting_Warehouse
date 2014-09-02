@@ -4,18 +4,27 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * SmEmployees entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_employees", catalog = "wccams")
 public class SmEmployees implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private SmDepartment smDepartment;
 	private String daEmployeesNumber;
@@ -41,7 +50,7 @@ public class SmEmployees implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set smUsers = new HashSet(0);
+	private Set<SmUser> smUsers = new HashSet<SmUser>(0);
 
 	// Constructors
 
@@ -65,7 +74,7 @@ public class SmEmployees implements java.io.Serializable {
 			Date daHireDate, Date daSolutiondate, Date daContractPeriod,
 			String daRemark, Date daDate, String fkPopulationInformationId,
 			String daSubscriberId, Boolean isDelete, Timestamp dtDate,
-			Integer rkOrder, Timestamp ctTime, Set smUsers) {
+			Integer rkOrder, Timestamp ctTime, Set<SmUser> smUsers) {
 		this.pkId = pkId;
 		this.smDepartment = smDepartment;
 		this.daEmployeesNumber = daEmployeesNumber;
@@ -95,7 +104,8 @@ public class SmEmployees implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -104,6 +114,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Department_id")
 	public SmDepartment getSmDepartment() {
 		return this.smDepartment;
 	}
@@ -112,6 +124,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.smDepartment = smDepartment;
 	}
 
+	@Column(name = "da_EmployeesNumber", length = 50)
 	public String getDaEmployeesNumber() {
 		return this.daEmployeesNumber;
 	}
@@ -120,6 +133,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daEmployeesNumber = daEmployeesNumber;
 	}
 
+	@Column(name = "da_EmployeesName", length = 20)
 	public String getDaEmployeesName() {
 		return this.daEmployeesName;
 	}
@@ -128,6 +142,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daEmployeesName = daEmployeesName;
 	}
 
+	@Column(name = "fk_sex_id", length = 36)
 	public String getFkSexId() {
 		return this.fkSexId;
 	}
@@ -136,6 +151,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.fkSexId = fkSexId;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_BirthDate", length = 10)
 	public Date getDaBirthDate() {
 		return this.daBirthDate;
 	}
@@ -144,6 +161,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daBirthDate = daBirthDate;
 	}
 
+	@Column(name = "da_HomeAddress", length = 100)
 	public String getDaHomeAddress() {
 		return this.daHomeAddress;
 	}
@@ -152,6 +170,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daHomeAddress = daHomeAddress;
 	}
 
+	@Column(name = "da_Phone", length = 20)
 	public String getDaPhone() {
 		return this.daPhone;
 	}
@@ -160,6 +179,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daPhone = daPhone;
 	}
 
+	@Column(name = "da_MobilePhones", length = 20)
 	public String getDaMobilePhones() {
 		return this.daMobilePhones;
 	}
@@ -168,6 +188,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daMobilePhones = daMobilePhones;
 	}
 
+	@Column(name = "da_Email", length = 30)
 	public String getDaEmail() {
 		return this.daEmail;
 	}
@@ -176,6 +197,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daEmail = daEmail;
 	}
 
+	@Column(name = "da_qq", length = 20)
 	public String getDaQq() {
 		return this.daQq;
 	}
@@ -184,6 +206,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daQq = daQq;
 	}
 
+	@Column(name = "da_Specialties", length = 30)
 	public String getDaSpecialties() {
 		return this.daSpecialties;
 	}
@@ -192,6 +215,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daSpecialties = daSpecialties;
 	}
 
+	@Column(name = "da_Hobbies", length = 30)
 	public String getDaHobbies() {
 		return this.daHobbies;
 	}
@@ -200,6 +224,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daHobbies = daHobbies;
 	}
 
+	@Column(name = "fk_Education_id", length = 36)
 	public String getFkEducationId() {
 		return this.fkEducationId;
 	}
@@ -208,6 +233,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.fkEducationId = fkEducationId;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_HireDate", length = 10)
 	public Date getDaHireDate() {
 		return this.daHireDate;
 	}
@@ -216,6 +243,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.daHireDate = daHireDate;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_Solutiondate", length = 10)
 	public Date getDaSolutiondate() {
 		return this.daSolutiondate;
 	}
@@ -224,6 +253,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.daSolutiondate = daSolutiondate;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_ContractPeriod", length = 10)
 	public Date getDaContractPeriod() {
 		return this.daContractPeriod;
 	}
@@ -232,6 +263,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daContractPeriod = daContractPeriod;
 	}
 
+	@Column(name = "da_Remark", length = 100)
 	public String getDaRemark() {
 		return this.daRemark;
 	}
@@ -240,6 +272,8 @@ public class SmEmployees implements java.io.Serializable {
 		this.daRemark = daRemark;
 	}
 
+	@Temporal(TemporalType.DATE)
+	@Column(name = "da_Date", length = 10)
 	public Date getDaDate() {
 		return this.daDate;
 	}
@@ -248,6 +282,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daDate = daDate;
 	}
 
+	@Column(name = "fk_PopulationInformation_id", length = 36)
 	public String getFkPopulationInformationId() {
 		return this.fkPopulationInformationId;
 	}
@@ -256,6 +291,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.fkPopulationInformationId = fkPopulationInformationId;
 	}
 
+	@Column(name = "da_Subscriber_id", length = 36)
 	public String getDaSubscriberId() {
 		return this.daSubscriberId;
 	}
@@ -264,6 +300,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.daSubscriberId = daSubscriberId;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -272,6 +309,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -280,6 +318,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -288,6 +327,7 @@ public class SmEmployees implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -296,11 +336,12 @@ public class SmEmployees implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getSmUsers() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "smEmployees")
+	public Set<SmUser> getSmUsers() {
 		return this.smUsers;
 	}
 
-	public void setSmUsers(Set smUsers) {
+	public void setSmUsers(Set<SmUser> smUsers) {
 		this.smUsers = smUsers;
 	}
 

@@ -3,17 +3,22 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * BfAcommunity entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "bf_acommunity", catalog = "wccams")
 public class BfAcommunity implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	// Fields
 
 	private String pkId;
 	private String daAcommunity;
@@ -22,9 +27,11 @@ public class BfAcommunity implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set pmgmBranchactivitieses = new HashSet(0);
-	private Set bfCommunities = new HashSet(0);
-	private Set smCommunityuserses = new HashSet(0);
+	private Set<PmgmBranchactivities> pmgmBranchactivitieses = new HashSet<PmgmBranchactivities>(
+			0);
+	private Set<BfCommunity> bfCommunities = new HashSet<BfCommunity>(0);
+	private Set<SmCommunityusers> smCommunityuserses = new HashSet<SmCommunityusers>(
+			0);
 
 	// Constructors
 
@@ -42,8 +49,9 @@ public class BfAcommunity implements java.io.Serializable {
 	/** full constructor */
 	public BfAcommunity(String pkId, String daAcommunity, String daName,
 			Boolean isDelete, Timestamp dtDate, Integer rkOrder,
-			Timestamp ctTime, Set pmgmBranchactivitieses, Set bfCommunities,
-			Set smCommunityuserses) {
+			Timestamp ctTime, Set<PmgmBranchactivities> pmgmBranchactivitieses,
+			Set<BfCommunity> bfCommunities,
+			Set<SmCommunityusers> smCommunityuserses) {
 		this.pkId = pkId;
 		this.daAcommunity = daAcommunity;
 		this.daName = daName;
@@ -57,7 +65,8 @@ public class BfAcommunity implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -66,6 +75,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "da_Acommunity", length = 50)
 	public String getDaAcommunity() {
 		return this.daAcommunity;
 	}
@@ -74,6 +84,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.daAcommunity = daAcommunity;
 	}
 
+	@Column(name = "da_Name", length = 50)
 	public String getDaName() {
 		return this.daName;
 	}
@@ -82,6 +93,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.daName = daName;
 	}
 
+	@Column(name = "is_delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -90,6 +102,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -98,6 +111,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -106,6 +120,7 @@ public class BfAcommunity implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -114,27 +129,31 @@ public class BfAcommunity implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getPmgmBranchactivitieses() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bfAcommunity")
+	public Set<PmgmBranchactivities> getPmgmBranchactivitieses() {
 		return this.pmgmBranchactivitieses;
 	}
 
-	public void setPmgmBranchactivitieses(Set pmgmBranchactivitieses) {
+	public void setPmgmBranchactivitieses(
+			Set<PmgmBranchactivities> pmgmBranchactivitieses) {
 		this.pmgmBranchactivitieses = pmgmBranchactivitieses;
 	}
 
-	public Set getBfCommunities() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bfAcommunity")
+	public Set<BfCommunity> getBfCommunities() {
 		return this.bfCommunities;
 	}
 
-	public void setBfCommunities(Set bfCommunities) {
+	public void setBfCommunities(Set<BfCommunity> bfCommunities) {
 		this.bfCommunities = bfCommunities;
 	}
 
-	public Set getSmCommunityuserses() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bfAcommunity")
+	public Set<SmCommunityusers> getSmCommunityuserses() {
 		return this.smCommunityuserses;
 	}
 
-	public void setSmCommunityuserses(Set smCommunityuserses) {
+	public void setSmCommunityuserses(Set<SmCommunityusers> smCommunityuserses) {
 		this.smCommunityuserses = smCommunityuserses;
 	}
 

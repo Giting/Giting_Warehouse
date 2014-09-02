@@ -3,18 +3,23 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * SmRole entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_role", catalog = "wccams")
 public class SmRole implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private String daRoleNumber;
 	private String daRoleName;
@@ -22,8 +27,8 @@ public class SmRole implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set smRolesmodules = new HashSet(0);
-	private Set smUsers = new HashSet(0);
+	private Set<SmRolesmodule> smRolesmodules = new HashSet<SmRolesmodule>(0);
+	private Set<SmUser> smUsers = new HashSet<SmUser>(0);
 
 	// Constructors
 
@@ -41,7 +46,8 @@ public class SmRole implements java.io.Serializable {
 	/** full constructor */
 	public SmRole(String pkId, String daRoleNumber, String daRoleName,
 			Boolean isDelete, Timestamp dtDate, Integer rkOrder,
-			Timestamp ctTime, Set smRolesmodules, Set smUsers) {
+			Timestamp ctTime, Set<SmRolesmodule> smRolesmodules,
+			Set<SmUser> smUsers) {
 		this.pkId = pkId;
 		this.daRoleNumber = daRoleNumber;
 		this.daRoleName = daRoleName;
@@ -54,7 +60,8 @@ public class SmRole implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -63,6 +70,7 @@ public class SmRole implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "da_RoleNumber", length = 20)
 	public String getDaRoleNumber() {
 		return this.daRoleNumber;
 	}
@@ -71,6 +79,7 @@ public class SmRole implements java.io.Serializable {
 		this.daRoleNumber = daRoleNumber;
 	}
 
+	@Column(name = "da_RoleName", length = 50)
 	public String getDaRoleName() {
 		return this.daRoleName;
 	}
@@ -79,6 +88,7 @@ public class SmRole implements java.io.Serializable {
 		this.daRoleName = daRoleName;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -87,6 +97,7 @@ public class SmRole implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -95,6 +106,7 @@ public class SmRole implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -103,6 +115,7 @@ public class SmRole implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -111,19 +124,21 @@ public class SmRole implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getSmRolesmodules() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "smRole")
+	public Set<SmRolesmodule> getSmRolesmodules() {
 		return this.smRolesmodules;
 	}
 
-	public void setSmRolesmodules(Set smRolesmodules) {
+	public void setSmRolesmodules(Set<SmRolesmodule> smRolesmodules) {
 		this.smRolesmodules = smRolesmodules;
 	}
 
-	public Set getSmUsers() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "smRole")
+	public Set<SmUser> getSmUsers() {
 		return this.smUsers;
 	}
 
-	public void setSmUsers(Set smUsers) {
+	public void setSmUsers(Set<SmUser> smUsers) {
 		this.smUsers = smUsers;
 	}
 

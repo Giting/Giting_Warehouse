@@ -1,16 +1,22 @@
 package com.giting.entities.table;
 
 import java.sql.Timestamp;
-import java.util.HashSet;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
- * 字典类型表
+ * BeDictionaryclass entity. @author MyEclipse Persistence Tools
  */
+@Entity
+@Table(name = "be_dictionaryclass", catalog = "wccams")
 public class BeDictionaryclass implements java.io.Serializable {
-	
-	private static final long serialVersionUID = 1L;
-	
+
+	// Fields
+
 	private String pkId;
 	private String dictClassname;
 	private String dictClassvalue;
@@ -18,7 +24,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set beDictionarydatas = new HashSet(0);
+	private BeDictionarydata beDictionarydata;
 
 	// Constructors
 
@@ -36,7 +42,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 	/** full constructor */
 	public BeDictionaryclass(String pkId, String dictClassname,
 			String dictClassvalue, Boolean isDelete, Timestamp dtDate,
-			Integer rkOrder, Timestamp ctTime, Set beDictionarydatas) {
+			Integer rkOrder, Timestamp ctTime, BeDictionarydata beDictionarydata) {
 		this.pkId = pkId;
 		this.dictClassname = dictClassname;
 		this.dictClassvalue = dictClassvalue;
@@ -44,11 +50,12 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.dtDate = dtDate;
 		this.rkOrder = rkOrder;
 		this.ctTime = ctTime;
-		this.beDictionarydatas = beDictionarydatas;
+		this.beDictionarydata = beDictionarydata;
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -57,6 +64,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "dict_Classname", length = 50)
 	public String getDictClassname() {
 		return this.dictClassname;
 	}
@@ -65,6 +73,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.dictClassname = dictClassname;
 	}
 
+	@Column(name = "dict_Classvalue", length = 30)
 	public String getDictClassvalue() {
 		return this.dictClassvalue;
 	}
@@ -73,6 +82,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.dictClassvalue = dictClassvalue;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -81,6 +91,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -89,6 +100,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -97,6 +109,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -105,12 +118,13 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getBeDictionarydatas() {
-		return this.beDictionarydatas;
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "beDictionaryclass")
+	public BeDictionarydata getBeDictionarydata() {
+		return this.beDictionarydata;
 	}
 
-	public void setBeDictionarydatas(Set beDictionarydatas) {
-		this.beDictionarydatas = beDictionarydatas;
+	public void setBeDictionarydata(BeDictionarydata beDictionarydata) {
+		this.beDictionarydata = beDictionarydata;
 	}
 
 }

@@ -3,18 +3,25 @@ package com.giting.entities.table;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * BfUnit entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "bf_unit", catalog = "wccams")
 public class BfUnit implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private BfBuildings bfBuildings;
 	private String daUnumber;
@@ -27,7 +34,7 @@ public class BfUnit implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private Set bfRooms = new HashSet(0);
+	private Set<BfRoom> bfRooms = new HashSet<BfRoom>(0);
 
 	// Constructors
 
@@ -46,7 +53,8 @@ public class BfUnit implements java.io.Serializable {
 	public BfUnit(String pkId, BfBuildings bfBuildings, String daUnumber,
 			String daUnitName, String daHouseNumber, Integer daLine,
 			Integer daColumn, String daMark, Boolean isDelete,
-			Timestamp dtDate, Integer rkOrder, Timestamp ctTime, Set bfRooms) {
+			Timestamp dtDate, Integer rkOrder, Timestamp ctTime,
+			Set<BfRoom> bfRooms) {
 		this.pkId = pkId;
 		this.bfBuildings = bfBuildings;
 		this.daUnumber = daUnumber;
@@ -63,7 +71,8 @@ public class BfUnit implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -72,6 +81,8 @@ public class BfUnit implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Buildings_id")
 	public BfBuildings getBfBuildings() {
 		return this.bfBuildings;
 	}
@@ -80,6 +91,7 @@ public class BfUnit implements java.io.Serializable {
 		this.bfBuildings = bfBuildings;
 	}
 
+	@Column(name = "da_Unumber", length = 50)
 	public String getDaUnumber() {
 		return this.daUnumber;
 	}
@@ -88,6 +100,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daUnumber = daUnumber;
 	}
 
+	@Column(name = "da_UnitName", length = 50)
 	public String getDaUnitName() {
 		return this.daUnitName;
 	}
@@ -96,6 +109,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daUnitName = daUnitName;
 	}
 
+	@Column(name = "da_HouseNumber", length = 50)
 	public String getDaHouseNumber() {
 		return this.daHouseNumber;
 	}
@@ -104,6 +118,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daHouseNumber = daHouseNumber;
 	}
 
+	@Column(name = "da_Line")
 	public Integer getDaLine() {
 		return this.daLine;
 	}
@@ -112,6 +127,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daLine = daLine;
 	}
 
+	@Column(name = "da_Column")
 	public Integer getDaColumn() {
 		return this.daColumn;
 	}
@@ -120,6 +136,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daColumn = daColumn;
 	}
 
+	@Column(name = "da_Mark", length = 100)
 	public String getDaMark() {
 		return this.daMark;
 	}
@@ -128,6 +145,7 @@ public class BfUnit implements java.io.Serializable {
 		this.daMark = daMark;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -136,6 +154,7 @@ public class BfUnit implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -144,6 +163,7 @@ public class BfUnit implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -152,6 +172,7 @@ public class BfUnit implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}
@@ -160,11 +181,12 @@ public class BfUnit implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	public Set getBfRooms() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "bfUnit")
+	public Set<BfRoom> getBfRooms() {
 		return this.bfRooms;
 	}
 
-	public void setBfRooms(Set bfRooms) {
+	public void setBfRooms(Set<BfRoom> bfRooms) {
 		this.bfRooms = bfRooms;
 	}
 

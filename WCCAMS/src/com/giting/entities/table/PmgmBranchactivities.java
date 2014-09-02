@@ -1,18 +1,23 @@
 package com.giting.entities.table;
 
 import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
- * 党支部活动表
+ * PmgmBranchactivities entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "pmgm_branchactivities", catalog = "wccams")
 public class PmgmBranchactivities implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private PmgmBranch pmgmBranch;
 	private BfAcommunity bfAcommunity;
@@ -60,7 +65,8 @@ public class PmgmBranchactivities implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -69,6 +75,8 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Branch_id")
 	public PmgmBranch getPmgmBranch() {
 		return this.pmgmBranch;
 	}
@@ -77,6 +85,8 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.pmgmBranch = pmgmBranch;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Acommunity_id")
 	public BfAcommunity getBfAcommunity() {
 		return this.bfAcommunity;
 	}
@@ -85,6 +95,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.bfAcommunity = bfAcommunity;
 	}
 
+	@Column(name = "da_ActivitiesNumber", length = 30)
 	public String getDaActivitiesNumber() {
 		return this.daActivitiesNumber;
 	}
@@ -93,6 +104,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.daActivitiesNumber = daActivitiesNumber;
 	}
 
+	@Column(name = "da_ActivitiesName", length = 30)
 	public String getDaActivitiesName() {
 		return this.daActivitiesName;
 	}
@@ -101,6 +113,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.daActivitiesName = daActivitiesName;
 	}
 
+	@Column(name = "da_ActivitiesContent", length = 300)
 	public String getDaActivitiesContent() {
 		return this.daActivitiesContent;
 	}
@@ -109,6 +122,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.daActivitiesContent = daActivitiesContent;
 	}
 
+	@Column(name = "da_Participants")
 	public Integer getDaParticipants() {
 		return this.daParticipants;
 	}
@@ -117,6 +131,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.daParticipants = daParticipants;
 	}
 
+	@Column(name = "fk_ActivityType_id", length = 36)
 	public String getFkActivityTypeId() {
 		return this.fkActivityTypeId;
 	}
@@ -125,6 +140,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.fkActivityTypeId = fkActivityTypeId;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -133,6 +149,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -141,6 +158,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -149,6 +167,7 @@ public class PmgmBranchactivities implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

@@ -1,18 +1,23 @@
 package com.giting.entities.table;
 
 import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * SmCommunityusers entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_communityusers", catalog = "wccams")
 public class SmCommunityusers implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private BfAcommunity bfAcommunity;
 	private SmUser smUser;
@@ -48,7 +53,8 @@ public class SmCommunityusers implements java.io.Serializable {
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -57,6 +63,8 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_Acommunity_id")
 	public BfAcommunity getBfAcommunity() {
 		return this.bfAcommunity;
 	}
@@ -65,6 +73,8 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.bfAcommunity = bfAcommunity;
 	}
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "fk_User_id")
 	public SmUser getSmUser() {
 		return this.smUser;
 	}
@@ -73,6 +83,7 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.smUser = smUser;
 	}
 
+	@Column(name = "is_Delete")
 	public Boolean getIsDelete() {
 		return this.isDelete;
 	}
@@ -81,6 +92,7 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.isDelete = isDelete;
 	}
 
+	@Column(name = "dt_Date", nullable = false, length = 19)
 	public Timestamp getDtDate() {
 		return this.dtDate;
 	}
@@ -89,6 +101,7 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.dtDate = dtDate;
 	}
 
+	@Column(name = "rk_Order")
 	public Integer getRkOrder() {
 		return this.rkOrder;
 	}
@@ -97,6 +110,7 @@ public class SmCommunityusers implements java.io.Serializable {
 		this.rkOrder = rkOrder;
 	}
 
+	@Column(name = "ct_Time", nullable = false, length = 19)
 	public Timestamp getCtTime() {
 		return this.ctTime;
 	}

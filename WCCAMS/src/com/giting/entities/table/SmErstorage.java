@@ -2,21 +2,27 @@ package com.giting.entities.table;
 
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * SmErstorage entity. @author MyEclipse Persistence Tools
  */
-
+@Entity
+@Table(name = "sm_erstorage", catalog = "wccams")
 public class SmErstorage implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
+	// Fields
+
 	private String pkId;
 	private String daErstorage;
-	private Set smElectronicrecords = new HashSet(0);
+	private Set<SmElectronicrecord> smElectronicrecords = new HashSet<SmElectronicrecord>(
+			0);
 
 	// Constructors
 
@@ -30,14 +36,16 @@ public class SmErstorage implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public SmErstorage(String pkId, String daErstorage, Set smElectronicrecords) {
+	public SmErstorage(String pkId, String daErstorage,
+			Set<SmElectronicrecord> smElectronicrecords) {
 		this.pkId = pkId;
 		this.daErstorage = daErstorage;
 		this.smElectronicrecords = smElectronicrecords;
 	}
 
 	// Property accessors
-
+	@Id
+	@Column(name = "pk_Id", unique = true, nullable = false, length = 36)
 	public String getPkId() {
 		return this.pkId;
 	}
@@ -46,6 +54,7 @@ public class SmErstorage implements java.io.Serializable {
 		this.pkId = pkId;
 	}
 
+	@Column(name = "da_ERStorage")
 	public String getDaErstorage() {
 		return this.daErstorage;
 	}
@@ -54,11 +63,13 @@ public class SmErstorage implements java.io.Serializable {
 		this.daErstorage = daErstorage;
 	}
 
-	public Set getSmElectronicrecords() {
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "smErstorage")
+	public Set<SmElectronicrecord> getSmElectronicrecords() {
 		return this.smElectronicrecords;
 	}
 
-	public void setSmElectronicrecords(Set smElectronicrecords) {
+	public void setSmElectronicrecords(
+			Set<SmElectronicrecord> smElectronicrecords) {
 		this.smElectronicrecords = smElectronicrecords;
 	}
 
