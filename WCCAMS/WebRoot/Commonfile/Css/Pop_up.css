@@ -1,0 +1,115 @@
+@charset "utf-8";
+/* CSS Document */
+h2{ margin:0px; padding:0px;}
+#One{position:absolute;top:100px;left:100px;width:800px;height:550px;background:#FFF;border:3px solid #1b93d8;z-index:1001; display:none;border-radius:5px;/*//圆角*/
+/*box-shadow:0 1px 3px 2px #666;//阴影*/}
+.title{position:relative;height:27px;padding:5px;border-bottom:1px solid #1b93d8; background:#1b93d8;}
+.title h2{font-size:14px;height:27px;line-height:24px; color:#FFF;}
+.title div{position:absolute;height:19px;top:2px;right:0;}
+.title a,a.open{float:left;width:21px;height:19px;display:block;margin-left:5px;background:url(../Images/tool.png) no-repeat;}
+a.open{position:absolute;top:10px;left:50%;margin-left:-10px;background-position:0 0;}
+a.open:hover{background-position:0 -29px;}
+.title a.min{background-position:-29px 0;}
+.title a.min:hover{background-position:-29px -29px;}
+.title a.max{background-position:-60px 0;}
+.title a.max:hover{background-position:-60px -29px;}
+.title a.revert{background-position:-149px 0;display:none;}
+.title a.revert:hover{background-position:-149px -29px;}
+.title a.close{background-position:-89px 0;}
+.title a.close:hover{background-position:-89px -29px;}
+.content{overflow:auto;padding:10px 20px; line-height:24px;}
+.content .not-title{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	padding-bottom:10px;
+	text-align:center;
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#f00;
+}
+.content .not-con{
+	width:100%;
+	height:330px;
+	line-height:24px;
+	overflow:auto;
+	overflow-x:hidden;
+	BACKGROUND-COLOR: transparent;
+ 	scrollbar-highlight-color: #FFFFFF; 
+ 	scrollbar-shadow-color: #FFFFFF;
+ 	scrollbar-arrow-color: #FFFFFF; 
+ 	scrollbar-face-color: #ccc; 
+ 	scrollbar-3dlight-color: #ccc; 
+ 	scrollbar-darkshadow-color: #ccc; 
+ 	scrollbar-track-color: #ccc;
+	border:1px solid #ddd;
+	padding:5px;
+}
+.content .not-fujian{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	border-bottom:1px dotted #999;
+	padding-top:5px;
+}
+.content .not-fujian .fj{
+	height:25px;
+	line-height:25px;
+	padding-left:20px;
+	background:url(../Images/attach.jpg) no-repeat left;
+	margin:2px 10px;
+	float:left;
+}
+.content .not-fujian .fj a{
+	color:#166cbf;
+	text-decoration:underline;
+}
+.content .not-fujian .fj a:hover{
+	color:#f00;
+}
+.content .not-page{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	color:#999;
+}
+.content .not-page a{
+	color:#333;
+	text-decoration:none;
+}
+.content .not-page a:hover{
+	color:#f00;
+}
+.content .not-page .l{
+	float:left;
+	padding-left:10px;
+}
+.content .not-page .r{
+	float:right;
+	padding-right:10px;
+}
+/*边框*/
+.resizeBR{position:absolute;width:14px;height:14px;right:0;bottom:0;overflow:hidden;cursor:nw-resize;background:url(../Images/resize.png) no-repeat;}
+.resizeL,#drag .resizeT,#drag .resizeR,#drag .resizeB,#drag .resizeLT,#drag .resizeTR,#drag .resizeLB{position:absolute;background:#000;overflow:hidden;opacity:0;filter:alpha(opacity=0);}
+.resizeL,#drag .resizeR{top:0;width:5px;height:100%;cursor:w-resize;}
+.resizeR{right:0;}
+.resizeT,#drag .resizeB{width:100%;height:5px;cursor:n-resize;}
+.resizeT{top:0;}
+.resizeB{bottom:0;}
+.resizeLT,#drag .resizeTR,#drag .resizeLB{width:8px;height:8px;}
+.resizeLT{top:0;left:0;cursor:nw-resize;}
+.resizeTR{top:0;right:0;cursor:ne-resize;}
+.resizeLB{left:0;bottom:0;cursor:ne-resize;}
+
+.bottombtn{border-top:1px #1b93d8 solid; width:100%; position:absolute; bottom:5px;}
+.black_overlay {display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color:#eee; z-index:1000; -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);}
+#Three{position:absolute;top:100px;left:100px;width:550px;height:400px;background:#FFF;border:3px solid #1b93d8;z-index:1001; display:none;border-radius:5px;/*//圆角*/
+/*box-shadow:0 1px 3px 2px #666;//阴影*/}
+/**************************************************************************************/
+/*****************第二层****************************************************************/
+/**************************************************************************************/
+#Two{position:absolute;top:100px;left:100px;width:550px;height:400px;background:#FFF;border:3px solid #1b93d8;z-index:1003; display:none;border-radius:5px;/*//圆角*/
+/*box-shadow:0 1px 3px 2px #666;//阴影*/}
+.black_overlayT {display: none; position: absolute; top: 0%; left: 0%; width: 100%; height: 100%; background-color:#eee; z-index:1002; -moz-opacity: 0.7; opacity:.70; filter: alpha(opacity=70);}
+.title a.closeT{background-position:-89px 0;}
+.title a.closeT:hover{background-position:-89px -29px;}

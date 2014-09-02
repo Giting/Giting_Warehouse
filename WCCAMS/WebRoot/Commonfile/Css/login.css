@@ -1,0 +1,99 @@
+@charset "utf-8";
+body {
+	padding:0px;
+	margin:0px;
+	background:url(../Images/loginBodyBg.jpg) no-repeat top center;
+}
+span,p,ul,li{
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+img{
+	border:0px;
+	padding:0px;
+	margin:0px;
+}
+.clear{
+	clear:both;
+	overflow:hidden;
+}
+a{
+	font-family:"宋体", Arial;
+	font-size:12px;
+	color:#333;
+	text-decoration:none;
+}
+a:hover {
+	color:166cbf;
+}
+
+
+
+
+
+
+
+
+.box{
+	width:1000px;
+	height:768px;
+	margin:0px auto;
+	background:url(../Images/loginBg.jpg) no-repeat;
+}
+.login{
+	width:366px;
+	height:84px;
+	padding-top:312px;
+	margin:0px auto;
+}
+.textBox{
+	width:258px;
+	height:79px;
+	padding:2px 0px 3px 0px;
+	float:left;
+}
+.textBox .textUsername{
+	width:218px;
+	height:28px;
+	padding:0px;
+	margin:0px;
+	line-height:28px;
+	padding:3px 0px;
+	padding-left:40px;
+	background:url(../Images/textUsername.jpg) no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#777;
+	border:0px;
+}
+.textBox .textPassword{
+	width:218px;
+	height:28px;
+	padding:0px;
+	margin:0px;
+	line-height:28px;
+	padding:3px 0px;
+	padding-left:40px;
+	background:url(../Images/textPassword.jpg) no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#777;
+	margin-top:11px;
+	border:0px;
+}
+.bottonBox{
+	width:80px;
+	height:80px;
+	padding:2px 0px;
+	float:right;
+}
+.bottonBox .textBotton{
+	width:80px;
+	height:80px;
+	border:0px;
+	margin:0px;
+	padding:0px;
+	background:url(../Images/loginBotton.png) no-repeat;
+	cursor:pointer;
+}

@@ -1,0 +1,10 @@
+@charset "utf-8";
+input,button,select,textarea{outline:none;}
+.cy_jjInputNum{border:1px solid #ccc;border-radius:5px;position:relative;overflow:hidden;-moz-user-select:none; background:#fff; float:left; margin:0px 3px; margin-top:3px;}
+.cy_jjInputNum input{border:0;margin:5px;}
+.cy_jjInputNum a{color:#999;text-align:center;display:block;border-left:1px solid #ccc;border-bottom:1px solid #ccc;position:absolute;height:0;right:0;cursor:pointer;}
+.cy_jjInputNum a:hover{background:#999;color:#fff;}
+.inputnumbox{
+	margin:0px 5px;
+	float:left;
+}
