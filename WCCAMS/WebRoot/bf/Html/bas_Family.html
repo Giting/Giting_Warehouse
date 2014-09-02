@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../Commonfile/Js/table-ghhs.js"></script>
+
+<link href="../Css/Pop_up.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Commonfile/Js/Pop_up_sctp.js"></script>
+<link href="../Css/Public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../JSframework/jquery.min.js"></script>
+<script type="text/javascript" src="../JSframework/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../Commonfile/Js/input-num.js"></script>
+<link href="../Css/input_num.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="../JSframework/themes/gray/easyui.css" id="swicth-style">
+
+<script type="text/javascript" language="javascript" src="../Commonfile/Js/dialog4/artDialog.js?skin=blue"></script>
+<script type="text/javascript" language="javascript" src="../Commonfile/Js/dialog4/plugins/iframeTools.js"></script>
+<script type="text/javascript">
+	
+</script>
+
+<title>社区智能管理系统</title>
+</head>
+
+<body>
+
+<div>
+<div id="cc" class="easyui-layout" style="width:100%;height:400px;">   
+    <div data-options="region:'north',title:'编辑家庭',split:false" style="height:170px;">
+   <table>
+        <tr><td colspan="4">家庭人口信息</td></tr>
+        <tr><td>房东姓名：</td><td><input type="text" id="ownername"/></td><td>家庭状况：</td><td><select><option value="小康">小康</option><option value="困难">困难</option></select></td><td>家庭电话：</td><td><input type="text" id="familyPhone"/></td><td>移动电话：</td><td><input type="text" id="movePhone"/></td></tr>
+        <tr><td>住所类型：</td><td><input type="text" id="houseType"/></td>
+        <td>家庭住址：</td><td colspan="3"><input type="text" id="familyAddress"/></td>
+      <td>计生户：</td><td><input type="text" id="livePlan"/></td></tr>
+        <tr><td>房屋状态：</td><td><select name="select">
+          <option value="常住">常住</option>
+          <option value="租出">租出</option>
+        </select></td>
+        <td>室号：</td><td><input type="text" id="houseNum"/></td>
+        <td>居住面积：</td><td><input type="text" id="liveArea"/></td>
+        <td>建筑面积：</td><td><input type="text" id="area"/></td></tr>
+        <tr>
+          <td>备注：</td>
+          <td colspan="8"><input type="text" id="remark"/></td></tr>
+   </table>
+  </div>
+  <div data-options="region:'center',title:'家庭人口信息'" style="padding:5px;background:#eee;">
+    <table class="easyui-datagrid" style="width:100%" data-options="url:'datagrid_data.json',fitColumns:true,singleSelect:true">   
+    <thead>   
+        <tr>   
+          <th data-options="field:'code'">姓名</th>   
+          <th data-options="field:'name'">户口类别</th>   
+          <th data-options="field:'price'">迁入原因</th>
+          <th data-options="field:'price1'">性别</th>
+          <th data-options="field:'price2'">身份证号</th> 
+          <th data-options="field:'price3'">出生日期</th>
+          <th data-options="field:'price4'">与户主关系</th>
+          <th data-options="field:'price5'">民族</th> 
+          <th data-options="field:'price6'">文化程度</th>
+          <th data-options="field:'price7'">人口类别</th>
+          <th data-options="field:'price8'">工作</th>           
+        </tr>   
+    </thead>   
+    <tbody>   
+        <tr>   
+            <td>张三</td><td>非农业户口</td><td></td><td>女</td><td>130429198902261227</td><td>1989-02-26</td><td>汉</td><td>本科</td><td>无</td><td>无</td>  
+        </tr>   
+        <tr>   
+            <td>张三</td><td>非农业户口</td><td></td><td>女</td><td>130429198902261227</td><td>1989-02-26</td><td>汉</td><td>本科</td><td>无</td><td>无</td> 
+        </tr> 
+        <tr>   
+            <td>张三</td><td>非农业户口</td><td></td><td>女</td><td>130429198902261227</td><td>1989-02-26</td><td>汉</td><td>本科</td><td>无</td><td>无</td>     
+        </tr>   
+        
+    </tbody>   
+</table> 
+    </div>
+    
+        <div region="south" border="false" style="border-bottom:1px solid #ddd;height:28px;padding:2px 2px 2px 2px;background:#fafafa;">
+            <div style="float:left;">
+                <a href="#" class="easyui-linkbutton" plain="true" icon="icon-add"><img src="../Images/icon-xz.png" />新增</a>
+                <a href="#" class="easyui-linkbutton" plain="true" icon="icon-save"><img src="../Images/icon-xg.png" />编辑</a>
+				<a href="#" class="easyui-linkbutton" plain="true" icon="icon-remove"><img src="../Images/icon-sc.png" />删除</a>
+            </div>
+			<div class="datagrid-btn-separator"></div>
+        </div>
+	</div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../Commonfile/Js/table-ghhs.js"></script>
+
+<link href="../Css/Pop_up.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Commonfile/Js/Pop_up_sctp.js"></script>
+<link href="../Css/Public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../Commonfile/Jsframework/jquery.min.js"></script>
+<script type="text/javascript" src="../Commonfile/Jsframework/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../Commonfile/Js/input-num.js"></script>
+<link href="../Css/input_num.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="../Commonfile/Jsframework/themes/gray/easyui.css" id="swicth-style">
+
+<script type="text/javascript" language="javascript" src="../Commonfile/Js/dialog4/artDialog.js?skin=blue"></script>
+<script type="text/javascript" language="javascript" src="../Commonfile/Js/dialog4/plugins/iframeTools.js"></script>
+<script type="text/javascript">
+	var openWindow;
+	var relative_receiveData=[];
+	
+	function lookFamily() {
+		art.dialog.open('bas_Family.html', {
+			width: '1000px',
+			height: '400px',
+			title: '编辑家庭',
+			opacity: 0.4,
+			skin: 'blue',
+			lock: true,
+			ok: function (iframeWin, topWin) {
+				// iframeWin: 对话框iframe内容的window对象
+				// topWin: 对话框所在位置的window对象
+				iframeWin.checkdata(window);
+				return false;
+			},
+			cancel: true
+		}
+		);
+	}
+
+	
+</script>
+
+<title>社区智能管理系统</title>
+</head>
+
+<body>
+<!--当前位置-->
+<div class="loaction">
+	<div class="icon-dqwz"><img src="../Commonfile/Images/icon-dqwz.jpg" /></div>
+	<div class="dqwz">当前位置：查看小区</div>
+</div>
+<!--显示部分-->
+<div id="cc" class="easyui-layout" style="width:100%;height:400px;">   
+    <div data-options="region:'north',title:'小区分布',split:false" style="height:170px;"><table>
+   	  <tr><td><a href=""><img src="../Commonfile/Images/person.jpg" width="110" height="130" /></a></td><td><a href=""><img src="../Commonfile/Images/person.jpg" width="110" height="130" /></a></td><td><a href=""><img src="../Commonfile/Images/person.jpg" alt="" width="110" height="130" /></a></td><td><a href=""><img src="../Commonfile/Images/person.jpg" width="110" height="130" /></a></td><td><a href=""><img src="../Commonfile/Images/person.jpg" width="110" height="130" /></a></td><td><a href=""><img src="../Commonfile/Images/person.jpg" width="110" height="130" /></a></td></tr>
+    </table></div>   
+    <div data-options="region:'south',title:'South Title',split:true" style="height:100px;"></div>   
+      
+       
+    <div data-options="region:'center',title:'小区详细信息'" style="padding:5px;background:#eee;">
+    <table class="easyui-datagrid" style="width:100%">  
+    <thead>   
+        <tr>   
+            <th data-options="field:'code'">一单元</th>   
+            <th data-options="field:'name'">二单元</th>   
+            <th data-options="field:'price'">三单元</th>            <th data-options="field:'price'">四单元</th>            <th data-options="field:'price'">五单元</th>             
+        </tr>   
+    </thead>   
+    <tbody>   
+        <tr>   
+            <td><span >001</span></td><td>name1</td><td>2323</td><td>name1</td><td>2323</td>    
+        </tr>   
+        <tr>   
+            <td>002</td><td>name2</td><td>4612</td><td>name1</td><td>2323</td>  
+        </tr> 
+        <tr>   
+            <td>001</td><td>name1</td><td>2323</td><td>name1</td><td>2323</td>    
+        </tr>   
+        
+    </tbody>   
+</table>   
+    <input type="button" onclick="lookFamily()" value="查看"/>  
+</div> 
+    
+    
+    
+</div>
+
+ 
+</div>
+
+
+
+</body>
+</html>
