@@ -27,9 +27,17 @@
 		<property name="password" value="${jdbc.password}"></property>
 		<property name="driverClass" value="${jdbc.driverClass}"></property>
 		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
-
-		<property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
+		
+		<!-- 每次连接增加数量  -->
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}"></property>
+		<!-- 连接池中保留的最大连接数。默认为15 -->
 		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+		<!-- 池中连接最小数量 -->   
+		<property name="minPoolSize" value="${jdbc.minPoolSize}"></property> 
+		<!-- 初始化时创建的连接数，应在minPoolSize与maxPoolSize之间取值。默认为3 -->
+  		<property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>  
+  		<!-- 最大空闲时间，超过空闲时间的连接将被丢弃。为0或负数则永不丢弃。默认为0； --> 
+  		<property name="maxIdleTime" value="${jdbc.maxIdleTime}"></property> 
 	</bean>
 
 	<!-- 配置 SessionFactory -->
