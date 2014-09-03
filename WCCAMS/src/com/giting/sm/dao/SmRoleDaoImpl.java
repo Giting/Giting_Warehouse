@@ -18,6 +18,6 @@ import com.giting.util.common.BaseDaoImpl;
 *    
 */ 
 @Repository("smRoleDao")
-public class SmRoleDaoImpl extends BaseDaoImpl implements ISmAnnouncementDao{
+public class SmRoleDaoImpl extends BaseDaoImpl implements ISmRoleDao{
 
 }

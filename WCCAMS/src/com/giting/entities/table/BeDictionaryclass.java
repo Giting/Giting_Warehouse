@@ -1,11 +1,14 @@
 package com.giting.entities.table;
 
 import java.sql.Timestamp;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -24,7 +27,8 @@ public class BeDictionaryclass implements java.io.Serializable {
 	private Timestamp dtDate;
 	private Integer rkOrder;
 	private Timestamp ctTime;
-	private BeDictionarydata beDictionarydata;
+	private Set<BeDictionarydata> beDictionarydatas = new HashSet<BeDictionarydata>(
+			0);
 
 	// Constructors
 
@@ -42,7 +46,8 @@ public class BeDictionaryclass implements java.io.Serializable {
 	/** full constructor */
 	public BeDictionaryclass(String pkId, String dictClassname,
 			String dictClassvalue, Boolean isDelete, Timestamp dtDate,
-			Integer rkOrder, Timestamp ctTime, BeDictionarydata beDictionarydata) {
+			Integer rkOrder, Timestamp ctTime,
+			Set<BeDictionarydata> beDictionarydatas) {
 		this.pkId = pkId;
 		this.dictClassname = dictClassname;
 		this.dictClassvalue = dictClassvalue;
@@ -50,7 +55,7 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.dtDate = dtDate;
 		this.rkOrder = rkOrder;
 		this.ctTime = ctTime;
-		this.beDictionarydata = beDictionarydata;
+		this.beDictionarydatas = beDictionarydatas;
 	}
 
 	// Property accessors
@@ -118,13 +123,13 @@ public class BeDictionaryclass implements java.io.Serializable {
 		this.ctTime = ctTime;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "beDictionaryclass")
-	public BeDictionarydata getBeDictionarydata() {
-		return this.beDictionarydata;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "beDictionaryclass")
+	public Set<BeDictionarydata> getBeDictionarydatas() {
+		return this.beDictionarydatas;
 	}
 
-	public void setBeDictionarydata(BeDictionarydata beDictionarydata) {
-		this.beDictionarydata = beDictionarydata;
+	public void setBeDictionarydatas(Set<BeDictionarydata> beDictionarydatas) {
+		this.beDictionarydatas = beDictionarydatas;
 	}
 
 }

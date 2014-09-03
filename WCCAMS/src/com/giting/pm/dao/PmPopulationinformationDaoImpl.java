@@ -18,6 +18,6 @@ import com.giting.util.common.BaseDaoImpl;
 *    
 */ 
 @Repository("pmPopulationinformationDao")
-public class PmPopulationinformationDaoImpl extends BaseDaoImpl implements IPmFamilyDao{
+public class PmPopulationinformationDaoImpl extends BaseDaoImpl implements IPmPopulationinformationDao{
 
 }

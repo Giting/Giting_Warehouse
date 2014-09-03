@@ -22,7 +22,7 @@ import com.giting.util.common.BaseServiceImpl;
 *    
 */ 
 @Service("pmRegistrationtypeService")
-public class PmRegistrationtypeServiceImpl extends BaseServiceImpl implements IPmFamilyService {
+public class PmRegistrationtypeServiceImpl extends BaseServiceImpl implements IPmRegistrationtypeService {
 	
 	@Resource
 	private IPmRegistrationtypeDao pmRegistrationtypeDao;

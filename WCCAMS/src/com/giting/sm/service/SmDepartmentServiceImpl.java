@@ -22,7 +22,7 @@ import com.giting.util.common.BaseServiceImpl;
 *    
 */ 
 @Service("smDepartmentService")
-public class SmDepartmentServiceImpl extends BaseServiceImpl implements ISmAnnouncementService{
+public class SmDepartmentServiceImpl extends BaseServiceImpl implements ISmDepartmentService{
 	
 	@Resource
 	private ISmDepartmentDao  smDepartmentDao;

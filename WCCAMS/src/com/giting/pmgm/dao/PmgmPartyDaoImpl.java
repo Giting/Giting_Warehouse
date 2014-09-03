@@ -18,6 +18,6 @@ import com.giting.util.common.BaseDaoImpl;
 *    
 */ 
 @Repository("pmgmPartyDao")
-public class PmgmPartyDaoImpl extends BaseDaoImpl implements IPmgmBranchactivitiesDao{
+public class PmgmPartyDaoImpl extends BaseDaoImpl implements IPmgmPartyDao{
 
 }
