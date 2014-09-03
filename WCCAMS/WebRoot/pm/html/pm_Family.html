@@ -12,121 +12,14 @@
 <script type="text/javascript" src="../../JSframework/jquery.min.js"></script>
 <script type="text/javascript" src="../../Commonfile/Js/input-num.js"></script>
 <link href="../../Commonfile/Css/input_num.css" rel="stylesheet" type="text/css" />
-
+<link href="../css/pm_Family.css" />
 
 <link rel="stylesheet" type="text/css" href="../../JSframework/themes/gray/easyui.css" id="swicth-style">
 <script type="text/javascript" src="../../JSframework/jquery.easyui.min.js"></script>
 
 <script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/artDialog.js?skin=blue"></script>
 <script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/plugins/iframeTools.js"></script>
-<script type="text/javascript">
-	var openWindow;
-	var relative_receiveData=[];
-	
-	
-	$.extend($.messager.defaults,{
-			ok:'确定',
-			cancel:'取消'
-		});
-
-	function Ck(newsID) {
-		$('#ckFormDiv').dialog('open');
-		$('#ck_receiveTime').val(relative_receiveData[0]);
-		$('#ck_relativeName').val(relative_receiveData[1]);
-		$('#ck_relativeRelation').val(relative_receiveData[2]);
-		$('#ck_contactPhone').val(relative_receiveData[3]);
-		$('#ck_receiveAddress').val(relative_receiveData[4]);
-	}
-
-	function Cz(newsID) {
-		$('#cz_receiveTime').val();
-		$('#cz_relativeName').val('');
-		$('#cz_relativeRelation').val('');
-		$('#cz_contactPhone').val('');
-		$('#cz_receiveAddress').val('');
-		relative_receiveData=[];
-		$('#czFormDiv').dialog({
-			title:'出站',
-			modal:true,
-			width:500,
-			height:300,
-			autoOpen:false,
-			buttons: [
-			{text:'确定',handler:function(){
-				var cz_receiveTime = $('#cz_receiveTime').val();
-				var cz_relativeName=$('#cz_relativeName').val();
-				var cz_relativeRelation=$('#cz_relativeRelation').val();
-				var cz_contactPhone=$('#cz_contactPhone').val();
-				var cz_receiveAddress=$('#cz_receiveAddress').val();
-				relative_receiveData.push(cz_receiveTime);
-				relative_receiveData.push(cz_relativeName);
-				relative_receiveData.push(cz_relativeRelation);
-				relative_receiveData.push(cz_contactPhone);
-				relative_receiveData.push(cz_receiveAddress);
-				$('#czFormDiv').dialog('close');
-				$.messager.alert("温馨提示","出站信息提交成功！");
-				$('#receiveTypeTd').html('亲属接回');
-				}},
-			{text:'取消',handler:function(){
-				$('#czFormDiv').dialog('close');
-				}
-				}]
-			});
-	}
-	
-	function confirmCz(){
-		var name=$('#cz_relativeName').val();
-		alert(name);
-	}
-
-
-
-	//添加数据成功后刷新数据列表
-	function reloadDate() {
-		document.getElementById('btnSearch').click();
-		//alert("刷新数据了");
-
-	}
-
-	var a;
-	function CheckAll() {
-		if (a == 1) {
-			for (var i = 0; i < window.document.forms[0].elements.length; i++) {
-				var e = form1.elements[i];
-				e.checked = false;
-			}
-			a = 0;
-		}
-		else {
-			for (var i = 0; i < window.document.forms[0].elements.length; i++) {
-				var e = form1.elements[i];
-				e.checked = true;
-			}
-			a = 1;
-		}
-	}
-	function CheckDel() {
-		var delnumber = 0;
-		for (var i = 0; i < window.document.forms[0].length; i++) {
-			var e = form1.elements[i];
-			if (e.id != "CheckBoxAll") {
-				if (e.checked == true) {
-					delnumber = delnumber + 1;
-				}
-			}
-		}
-		if (delnumber == 0) {
-			alert("请至少选择一项");
-			return false;
-		}
-		if (window.confirm("你确认要删除吗？")) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-</script>
+<script type="text/javascript" language="javascript" src="../js/pm_Family.js"></script>
 
 <title>aaaa</title>
 </head>
@@ -135,291 +28,142 @@
 <!--当前位置-->
 <div class="loaction">
 	<div class="icon-dqwz"><img src="../../Commonfile/Images/icon-dqwz.jpg" /></div>
-	<div class="dqwz">当前位置：家庭信息登记</div>
+	<div class="dqwz">当前位置：家庭信息登记</div> <br />
 </div>
 <!--查询部分-->
 <div class="seach-box">
-	<div class="seach">姓 名：<input type="text" class="form-text" /></div>
-	<div class="seach">身份证号：<input type="text" class="form-text" /></div>
-	<div class="seach">救助证号：<input type="text" class="form-text" /></div>
-	<div class="seach"><input type="button" value="查询"  class="seach-button" onmouseover = "this.className='seach-button-hover'" onmousedown = "this.className='seach-button-click'" onmouseout=" this.className='seach-button'"/></div>
-	<div class="clear"></div>
+    
+    <div><input type="button" value="查询"  class="seach-button" onmouseover = "this.className='seach-button-hover'" onmousedown = "this.className='seach-button-click'" onmouseout=" this.className='seach-button'"/><br />
+    <div style="width:100%">
+       <table style="width:100%">
+           <tr>
+               <td align="right">小区名称：</td>
+               <td align="left">
+                   <select class="easyui-combobox">
+                       <option>aaaa</option>
+                       <option>aaaa</option>
+                       <option>aaaa</option>
+                   </select>
+               </td>
+               <td align="right">楼栋地址：</td>
+               <td align="left"><input type="text" /></td>
+           </tr>
+            <tr>
+               
+               <td align="right">房主姓名：</td>
+               <td align="left"><input type="text" /></td>
+                <td align="right">家庭地址：</td>
+               <td align="left">
+                   <input type="text" />
+               </td>
+           </tr>
+            <tr>
+               <td align="right">房间号：</td>
+               <td align="left">
+                   <input type="text" />
+               </td>
+               <td align="right">居住状态：</td>
+               <td align="left">
+                   <select class="easyui-combobox">
+                       <option>aaaa</option>
+                       <option>aaaa</option>
+                       <option>aaaa</option>
+                   </select>
+               </td>
+           </tr>
+       </table>
+    </div>
 </div>
-<!--功能按钮-->
-<div class="button-box">
-	<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
-		<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-xz.png" /></div>
-		<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="addLlryInfo()">新增</a></div>
-	</div>
-    <div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
-		<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-xg.png" /></div>
-		<div class="gn-but-word"><a href="#" target="_self" class="font04">修改</a></div>
-	</div>
-    <div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
-		<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-ck.png" /></div>
-		<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="queryDetail()">查看</a></div>
-	</div>
-    <div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
-		<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-sc.png" /></div>
-		<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="delLlryInfo()">删除</a></div>
-	</div>
-	<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
-		<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-sx.png" /></div>
-		<div class="gn-but-word"><a href="#" class="font04" target="_self">审核</a></div>
-	</div>
-	<div class="clear"></div>
-</div>
+
 <!--数据列表-->
 <div class="table-box">
 	<table width="100%" border="0" cellspacing="1" cellpadding="1" id="tab">
 	  <!--表头部分-->
-	  <tr class="table-title">
-		<td><input type="checkbox" /></td>
-		<td>救助证号</td>
-		<td>姓名</td>
-		<td>性别</td>
-		<td>年龄</td>
-		<td>身份证</td>
-		<td>户口所在地</td>
-		<td>是否享受低保</td>
-		<td>乞讨时间</td>
-		<td>救助类型</td>
-		<td>出站类型</td>
+	  <tr >
+		<td>状态</td>
+		<td>楼栋号</td>
+		<td>房屋编号</td>
+		<td>房屋地址</td>
+		<td>单元号</td>
+		<td>房间号</td>
+		<td>建筑面积</td>
+		<td>居住面积</td>
+		<td>家庭编号</td>
+		<td>户籍类别</td>
+		<td>户主姓名</td>
 	  </tr>
 	  <!--数据部分-->
-	  <tr>
-	   <td><input type="checkbox" id="firstData" /></td>
-		<td>0315</td>
-		<td>张瑞祥</td>
-		<td>男</td>
-		<td>65</td>
-		<td> 130429195003150652</td>
-		<td>河北石家庄市桥西区</td>
-		<td>是</td>
-		<td>2009-3-15</td>
-		<td>医疗救助</td>
-		<td id='receiveTypeTd' style="color:#006600">--</td>
+	  <tr id="tab1">
+	   
+		<td>寄住</td>
+		<td>D15</td>
+		<td>20121212</td>
+		<td>阳光100号D5单元</td>
+		<td> 1单元</td>
+		<td>1011</td>
+		<td>93</td>
+		<td>0</td>
+		<td>21242442</td>
+		<td >非农业家庭</td>
+        <td >巴雷</td>
 	  </tr>
-	    <td><input type="checkbox" /></td>
-		<td>0251</td>
-		<td>李红丽</td>
-		<td>女</td>
-		<td>61</td>
-		<td>130156195306153581</td>
-		<td>河北省衡水市</td>
-		<td>否</td>
-		<td>2009-06-15</td>
-		<td>医疗救助</td>
-		<td>--</td>
+	  <tr class="tab1">
+	   
+		<td>寄住</td>
+		<td>D15</td>
+		<td>20121212</td>
+		<td>阳光100号D5单元</td>
+		<td> 1单元</td>
+		<td>1011</td>
+		<td>93</td>
+		<td>0</td>
+		<td>21242442</td>
+		<td >非农业家庭</td>
+        <td >巴雷</td>
 	  </tr>
-      <tr>
-	    <td><input type="checkbox" /></td>
-		<td>0252</td>
-		<td>张进宝</td>
-		<td>男</td>
-		<td>74</td>
-		<td>130656194105033581</td>
-		<td>河北省保定市</td>
-		<td>否</td>
-		<td>2012-05-03</td>
-		<td>医疗救助</td>
-		<td>--</td>
+      <tr class="tab1">
+	   
+		<td>寄住</td>
+		<td>D15</td>
+		<td>20121212</td>
+		<td>阳光100号D5单元</td>
+		<td> 1单元</td>
+		<td>1011</td>
+		<td>93</td>
+		<td>0</td>
+		<td>21242442</td>
+		<td >非农业家庭</td>
+        <td >巴雷</td>
 	  </tr>
-     <tr>
-	   <td><input type="checkbox" /></td>
-		<td>0253</td>
-		<td>杨宏芳</td>
-		<td>女</td>
-		<td>46</td>
-		<td>430156196909013652</td>
-		<td>山东省聊城市</td>
-		<td>否</td>
-		<td>2013-09-01</td>
-		<td>医疗救助</td>
-		<td>--</td>
+      <tr class="tab1">
+	   
+		<td>寄住</td>
+		<td>D15</td>
+		<td>20121212</td>
+		<td>阳光100号D5单元</td>
+		<td> 1单元</td>
+		<td>1011</td>
+		<td>93</td>
+		<td>0</td>
+		<td>21242442</td>
+		<td >非农业家庭</td>
+        <td >巴雷</td>
 	  </tr>
-      <tr>
-		<td><input type="checkbox" /></td>
-		<td>0254</td>
-		<td>张兵</td>
-		<td>男</td>
-		<td>69</td>
-		<td>440156194606125546</td>
-		<td>山东省滨州市</td>
-		<td>否</td>
-		<td>2012-11-03</td>
-		<td>医疗救助</td>
-		<td>--</td>
-	  </tr>
-      <tr>
-	   <td><input type="checkbox" /></td>
-		<td>0255</td>
-		<td>周信芳</td>
-		<td>女</td>
-		<td>26</td>
-		<td>210156198906105821</td>
-		<td>山西省大同市</td>
-		<td>否</td>
-		<td>2011-11-03</td>
-		<td>医疗救助</td>
-		<td>--</td>
-	  </tr>
-      <tr>
-	   <td><input type="checkbox" /></td>
-		<td>0257</td>
-		<td>孙正</td>
-		<td>男</td>
-		<td>75</td>
-		<td>130156194106108402</td>
-		<td>河北省沧州市</td>
-		<td>否</td>
-		<td>2012-04-23</td>
-		<td>医疗救助</td>
-		<td>--</td>
-	  </tr>
-      <tr>
-	   <td><input type="checkbox" /></td>
-		<td>0260</td>
-		<td>王红林</td>
-		<td>男</td>
-		<td>60</td>
-		<td>250156195506103391</td>
-		<td>安徽省合肥市</td>
-		<td>否</td>
-		<td>2012-05-03</td>
-		<td>医疗救助</td>
-		<td>--</td>
-	  </tr>
+      <tr class="tab1">
+	   
+		<td>寄住</td>
+		<td>D15</td>
+		<td>20121212</td>
+		<td>阳光100号D5单元</td>
+		<td> 1单元</td>
+		<td>1011</td>
+		<td>93</td>
+		<td>0</td>
+		<td>21242442</td>
+		<td >非农业家庭</td>
+        <td >巴雷</td>
+	  </tr>  
 	</table>
-</div>
-<div id="czFormDiv">
-	<div class="easyui-layout" style="width:100%;height:100%;" data-options="fit:true">
-   <div data-options="region:'center'">
-						<div id='tabDiv' class="easyui-tabs" data-options="tools:'#tab-tools',fit:true">
-            	<div title="救助终止">
-            		
-            	</div>
-            	<div title="亲属接回" data-options="selected:true">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    	<td><span class="font01">*</span>接回时间：</td>
-                        <td><input id="cz_receiveTime" type="text" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年MM月dd日'})" class="Wdate" style="width:120px; border:1px solid #b6cbde;"/></td>
-                    	<td><span class="font01">*</span>亲属名称：</td>
-                        <td><input  id='cz_relativeName' type="text" class="form-text" /></td>
-                        
-                    </tr>
-                    <tr>
-                    <td><span class="font01">*</span>救助人员关系： </td>
-                        <td><input id='cz_relativeRelation' type="text" class="form-text" /></td>
-                    	<td><span class="font01">*</span>联系方式：</td>
-                        <td colspan="3"><input id='cz_contactPhone' type="text" class="form-text" /></td>
-                    </tr>
-                    <tr>
-                    	<td><span class="font01">*</span>接回地址：</td>
-                        <td colspan="3"><input id='cz_receiveAddress' type="text" class="form-text-length" style="width:300px;" /></td>
-                    </tr>
-                </table>
-              </div>
-            	</div>		
-            	<div title="护送返乡">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    	<td><span class="font01">*</span>出站时间：</td>
-                        <td><input id="cz_receiveTime" type="text" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年MM月dd日'})" class="Wdate" style="width:120px; border:1px solid #b6cbde;"/></td>
-                        <td><span class="font01">*</span>护送负责人： </td>
-                        <td><input type="text" class="form-text" /></td>
-                   </tr>
-                   <tr>
-                    	<td><span class="font01">*</span>护送地：</td>
-                        <td><input type="text" class="form-text" /></td>
-                        <td><span class="font01">*</span>护送方式： </td>
-                        <td><input type="text" class="form-text" /></td>
-                   </tr>
-                   </tr>
-                </table>
-              </div>
-            	</div>		
-            	<div title="政府安置">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    		
-                         <td><span class="font01">*</span>安置部门：</td>
-                        <td><input type="text" class="form-text" /></td>
-                        <td><span class="font01">*</span>安置地： </td>
-                        <td><input type="text" class="form-text" /></td>
-                   </tr>
-                </table>
-
-              </div>
-            	</div>	
-      			
-            </div>
-		</div>	
-	</div>	
-</div>
-
-<div id="ckFormDiv" class="easyui-dialog"  style="width:500px;height:250px;padding:0px;font-size: 14px" data-options="title:'查看',border:false,modal:true,closed:true,collapsible:false,minimizable:false,maximizable:true,shadow:false,buttons: [{text:'取消',handler:function(){$('#ckFormDiv').dialog('close');}}]">
-	<div class="easyui-layout" style="width:100%;height:100%;" data-options="fit:true">
-   <div data-options="region:'center'">
-						<div class="easyui-tabs" data-options="tools:'#tab-tools',fit:true">
-            	<div title="救助终止">
-            		
-            	</div>
-            	<div title="亲属接回" data-options="selected:true">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    	<td><span class="font01">*</span>接回时间：</td>
-                        <td><input id="ck_receiveTime" type="text" onfocus="WdatePicker({skin:'default',dateFmt:'yyyy年MM月dd日'})" class="Wdate" style="width:120px; border:1px solid #b6cbde;"/></td>
-                    	<td><span class="font01">*</span>亲属名称：</td>
-                        <td><input  id='ck_relativeName' readOnly="true" type="text" class="form-text" /></td>
-                        
-                    </tr>
-                    <tr>
-                    	<td><span class="font01">*</span>救助人员关系： </td>
-                        <td><input id='ck_relativeRelation' readOnly="true" type="text" class="form-text" /></td>
-                    	<td><span class="font01">*</span>联系方式：</td>
-                        <td colspan="3"><input id='ck_contactPhone' type="text"  readOnly="true" class="form-text" /></td>
-                    </tr>
-                    <tr>
-                    	<td><span class="font01">*</span>接回地址：</td>
-                        <td colspan="3"><input type="text" id='ck_receiveAddress' readOnly="true" class="form-text-length" style="width:300px;" /></td>
-                    </tr>
-                </table>
-              </div>
-            	</div>		
-            	<div title="护送返乡">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    		<td><span class="font01">*</span>护送地：</td>
-                        <td><input type="text" readOnly="true" class="form-text" /></td>
-                        <td><span class="font01">*</span>护送负责人： </td>
-                        <td><input type="text" readOnly="true" class="form-text" /></td>
-                   </tr>
-                </table>
-              </div>
-            	</div>		
-            	<div title="政府安置">
-            		<div class="tab-box" style="margin:0px;; padding:0px;">
-            			<table width="100%" border="0" cellspacing="1" cellpadding="1">
-                	<tr>
-                    		<td><span class="font01">*</span>安置部门：</td>
-                        <td><input type="text" readOnly="true" class="form-text" /></td>
-                        <td><span class="font01">*</span>安置地： </td>
-                        <td><input type="text" readOnly="true" class="form-text" /></td>
-                   </tr>
-                </table>
-
-              </div>
-            	</div>	
-      			
-            </div>
-		</div>	
-	</div>	
 </div>
 <!--分页部分-->
 <div class="page-box">
@@ -431,7 +175,7 @@
 		</select>
 		页
 	</div>
-	<div class="page">第1页/共1页</div>
+	<div class="page">第1页/共2页</div>
 	<div class="page">当前页显示
 		<select class="form-select">
 			<option value="1" selected="selected">1</option>
@@ -445,12 +189,164 @@
 			<option value="9">9</option>
 			<option value="10">10</option>
 		</select>
-		条/共8条
+		条/共19条
 	</div>
 	<div class="page"><a href="#" class="font02">尾页</a></div>
 	<div class="page"><a href="#" class="font02">下一页</a></div>
 	<div class="page"><a href="#" class="font02">上一页</a></div>
 	<div class="page"><a href="#" class="font02">首页</a></div>
+</div>
+<!------家庭信息弹出层------------------------------------------------------------------------------------------------------> 
+<div id="F_Newbottom" class="white_content" class="easyui-window" title="编辑家庭"  style="display:none"  
+        data-options="iconCls:'icon-save',modal:true">   
+         <!--<div id="win">
+                <h2><span>编辑家庭</span><a id="pclose1" href="javascript:void(0)" onclick="hide('F_Newbottom')">X</a>
+                </h2> 
+          </div>
+          --><div class="gundong" style="width:100%">
+  			<h2><span  style="width:100%;text-align:right">家庭基本信息</span></h2> 
+			<table style="border:1px">
+			  <tr>
+			    <td align="right">房主姓名：</td>
+			    <td>
+                   <input id="pbas_bas_name" type="text" value="吴琼"/>
+                </td>
+			    <td align="right">家庭状况:</td>
+			    <td >
+                   <select class="easyui-combobox">
+                      <option>aaaaa</option>
+                   </select>
+                </td>
+			    <td align="right">家庭电话:</td>
+			    <td>
+                   <input id="pbas_bas_name" type="text"/>
+                </td> 
+				<td align="right">移动电话:</td>
+                <td>
+                   <input id="pbas_bas_name" type="text" value="1111111111"/>
+                </td>
+              </tr>
+              <tr>
+			    <td align="right">住所类型：</td>
+			    <td>
+                   <select class="easyui-combobox">
+                      <option>aaaaa</option>
+                   </select>
+                </td>
+			    <td align="right">家庭住址:</td>
+			    <td colspan="3">
+                  <input id="pbas_bas_name" type="text"/>
+                </td>
+				<td align="right">计生户:</td>
+                <td>
+                   <select class="easyui-combobox">
+                      <option>aaaaa</option>
+                   </select>
+                </td>
+              </tr>
+              <tr>
+			    <td align="right">房屋状态：</td>
+			    <td>
+                    <select class="easyui-combobox">
+                      <option>aaaaa</option>
+                   </select>
+                </td>
+			    <td align="right">室号:</td>
+			    <td >
+                  <input id="pbas_bas_name" type="text"/>
+                </td>
+			    <td align="right">居住面积:</td>
+			    <td>
+                   <input id="pbas_bas_name" type="text"/>
+                </td> 
+				<td align="right">建筑面积:</td>
+                <td>
+                   <input id="pbas_bas_name" type="text" value="111"/>
+                </td>
+              </tr>
+			  <tr>
+			    <td align="right">家庭人数：</td>
+			    <td>
+                     <input id="pbas_bas_name" type="text"/>
+                </td>
+			    <td align="right">男人数:</td>
+			    <td >
+                  <input id="pbas_bas_name" type="text"/>
+                </td>
+			    <td align="right">女人数:</td>
+			    <td>
+                   <input id="pbas_bas_name" type="text"/>
+                </td> 
+				<td align="right">外出人数:</td>
+                <td>
+                   <input id="pbas_bas_name" type="text" value="111"/>
+                </td>
+              </tr>
+              <tr>
+			    <td align="right">备注：</td>
+			    <td colspan="7">
+                     <input id="pbas_bas_name" type="text"/>
+                </td>
+              </tr>
+			</table>
+		  </div>
+          <br /><br />
+          <div style="width:100%">
+              <h2><span style="width:100%;text-align:right">家庭人口信息</span></h2> 
+              <table style="border:1px">
+                  <tr>
+                     <td>姓名</td>
+                     <td>户口类别</td>
+                     <td>迁入原因</td>
+                     <td>性别</td>
+                     <td>身份证号</td>
+                     <td>出生日期</td>
+                     <td>与户主关系</td>
+                     <td>民族</td>
+                     <td>文化程度</td>
+                     <td>人员分类</td>
+                  </tr>
+                  <tr>
+                     <td>吴琼</td>
+                     <td>非农业</td>
+                     <td></td>
+                     <td>女</td>
+                     <td>111111111111111</td>
+                     <td></td>
+                     <td>户主</td>
+                     <td>汉族</td>
+                     <td>高中</td>
+                     <td></td>
+                  </tr>
+              </table>
+          </div>
+          <br /><br />
+         <!--功能按钮-->
+
+		<div class="button-box" style="width:100%">
+			<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" 				this.className='gn-button'">
+				<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-xz.png" /></div>
+				<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="addLlryInfo()">新增</a></div>
+			</div>
+    		<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
+				<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-xg.png" /></div>
+				<div class="gn-but-word"><a href="#" target="_self" class="font04">修改</a></div>
+			</div>
+    		<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
+				<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-ck.png" /></div>
+				<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="queryDetail()">查看</a></div>
+			</div>
+    		<div class="gn-button" onmouseover = "this.className='gn-button-hover'" onmousedown = "this.className='gn-button-click'" onmouseout=" this.className='gn-button'">
+				<div class="gn-but-icon"><img src="../../Commonfile/Images/icon-sc.png" /></div>
+				<div class="gn-but-word"><a href="#" target="_self" class="font04" onclick="delLlryInfo()">删除</a></div>
+			</div>
+          </div>
+		  <table cellspacing="0" cellpadding="0" class="tab_bottom" style="width:100%">
+  				<tr >
+                    <td><input id='psave' type="button" value="保存" class="btnstyle" onmouseover = "this.className='btnstyleO'" onmousedown = "this.className='btnstyleD'" onmouseout ="this.className='btnstyle'" /></td> 
+                    <td><input id="pclose" type="button" onclick="javascript:void(0)" value="关闭" class="btnstyle" onmouseover = "this.className='btnstyleO'" onmousedown = "this.className='btnstyleD'" onmouseout ="this.className='btnstyle'" /></td>
+  				</tr>
+		  </table>
 </div>
 
 

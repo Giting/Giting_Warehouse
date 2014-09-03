@@ -1,0 +1,5 @@
+.white_content {display: none; position:relative; top:0%; left:10%; width:928px; border:3px solid #3778bc; z-index:1002; background:#fff;}
+.white_content .tit{width:900px; height:auto; text-align:center; font-weight:600; color:#17a5bb; font-size:20px; border-bottom:#17a5bb 2px solid;}
+
+h2{color:#fff;font-size:18px;height:30px;text-align:right;background:#3778bc; padding-top:10px; padding-right:10px; cursor:move; margin:0px;}
+h2 span{ float:left; padding-left:10px;}
