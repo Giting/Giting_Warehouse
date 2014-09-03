@@ -45,7 +45,14 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
 		<!-- hibernate映射实体的自动加载 -->
-		<property name="mappingLocations" value="classpath:com/giting/entities/*/*.hbm.xml"></property>
+		<!-- <property name="mappingLocations" value="classpath:com/giting/entities/*/*.hbm.xml"></property>
+		 -->
+		<!-- 包扫描的方式加载注解类(推荐) -->
+		<property name="packagesToScan">
+			<list>
+				<value>com.giting.entities.*</value>
+			</list>
+		</property>
 	</bean>
 
     <!-- 配置HibernateTemplate -->
