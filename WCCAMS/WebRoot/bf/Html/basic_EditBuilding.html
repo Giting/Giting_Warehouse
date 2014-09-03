@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../../JSframework/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../../JSframework/Js/table-ghhs.js"></script>
+
+<link href="../../Commonfile/Css/Pop_up.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Commonfile/Js/Pop_up_sctp.js"></script>
+<link href="../../Commonfile/Css/Public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../../JSframework/jquery.min.js"></script>
+<script type="text/javascript" src="../../JSframework/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Commonfile/Js/input-num.js"></script>
+<link href="../../Commonfile/Css/input_num.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="../../JSframework/jquery-easyui-1.4/themes/gray/easyui.css" id="swicth-style">
+
+<script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/artDialog.js?skin=blue"></script>
+<script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/plugins/iframeTools.js"></script>
+<script type="text/javascript">
+	var openWindow;
+	var relative_receiveData=[];
+	$(function(){
+		var pager = $('#dg').datagrid().datagrid('getPager');
+		//$('#dg').datagrid('load');    
+	});
+	
+	
+	
+	//删除按钮
+	function edit() {
+		
+		art.dialog.open('basic_EditBuildingDetail.html', {
+			width: '1000px',
+			height: '400px',
+			title: '编辑楼栋',
+			opacity: 0.4,
+			skin: 'blue',
+			lock: true,
+			ok: function (iframeWin, topWin) {
+				// iframeWin: 对话框iframe内容的window对象
+				// topWin: 对话框所在位置的window对象
+				iframeWin.checkdata(window);
+				return false;
+			},
+			cancel: true
+		}
+		);
+		
+	
+	}
+	
+</script>
+
+<title>社区智能管理系统</title>
+</head>
+
+<body>
+<!--当前位置-->
+<div class="loaction">
+	<div class="icon-dqwz"><img src="../../Commonfile/Images/icon-dqwz.jpg" /></div>
+	<div class="dqwz">当前位置：编辑小区</div>
+</div>
+<!--显示部分-->
+<div id="cc" class="easyui-layout" style="width:100%;height:400px;">   
+    <div data-options="region:'center',title:'编辑楼栋',fit:true" style="padding:5px;background:#eee;width:100%;height:100%;">
+		<div style="float:left;">
+<!--			<a href="#" class="easyui-linkbutton" plain="true" icon="icon-add"><img src="../Images/icon-ck.png" />查询</a>-->
+			<a href="#" class="easyui-linkbutton" plain="true" icon="icon-remove"><img src="../../Commonfile/Images/icon-sc.png" />删除</a>
+			<a href="#" class="easyui-linkbutton" plain="true" icon="icon-edit" onclick="edit()"><img src="../../Commonfile/Images/icon-xg.png" />修改</a>
+			查询项:
+			<input type="text" id="searchType" />
+			<select class="easyui-combobox" panelHeight="auto" style="width:100px">
+				<option value="小区名称">小区名称</option>
+				<option value="楼栋编号">楼栋编号</option>
+				<option value="楼栋名称">楼栋名称</option>
+				<option value="房屋类别">房屋类别</option>
+			</select>
+			登记日期:
+			<input class="easyui-datebox" style="width:100px" id="startTime">
+			至:
+			<input class="easyui-datebox" style="width:100px" id="endTime">
+			<a href="#" class="easyui-linkbutton" onclick="search()" style="width:60px;">查询</a>
+		</div>
+		<table class="easyui-datagrid" style="width:100%" data-options="
+				rownumbers:true,
+				singleSelect:true,
+				autoRowHeight:false,
+				pagination:true,
+				pageSize:10" id="dg">  
+			<thead>   
+				<tr>   
+					<th data-options="field:'code',width:100">小区名称</th>   
+					<th data-options="field:'name',width:100">楼栋编号</th>   
+					<th data-options="field:'price',width:100">楼栋名称</th>           
+					<th data-options="field:'price2',width:100">层数</th>            
+					<th data-options="field:'price3',width:100">房屋类别</th>
+					<th data-options="field:'price3',width:100">排列方式</th> 
+					<th data-options="field:'price23',width:100">图片地址</th>            
+					<th data-options="field:'price41',width:100">备注</th> 
+					<th data-options="field:'price42',width:100">登记人</th>
+					<th data-options="field:'price43',width:100">登记日期</th>            
+				</tr>   
+			</thead>   
+			<tbody>   
+				<tr>   
+					<td><span >001</span></td><td>name1</td><td>2323</td><td>name1</td><td>2323</td><td>name1</td><td>2323</td>    
+				</tr>   
+				<tr>   
+					<td>002</td><td>name2</td><td>4612</td><td>name1</td><td>2323</td> <td>name1</td><td>2323</td>  
+				</tr> 
+				<tr>   
+					<td>001</td><td>name1</td><td>2323</td><td>name1</td><td>2323</td><td>name1</td><td>2323</td>     
+				</tr>   
+				
+			</tbody>   
+		</table>   
+ 
+	</div> 
+</div>
+
+
+</body>
+</html>

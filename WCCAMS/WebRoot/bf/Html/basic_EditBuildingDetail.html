@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../Js/table-ghhs.js"></script>
+
+<link href="../../Commonfile/Css/Pop_up.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Js/Pop_up_sctp.js"></script>
+<link href="../../Commonfile/Css/Public.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../Commonfile/Js/time-text/WdatePicker.js"></script>
+<script type="text/javascript" src="../../JSframework/jquery.min.js"></script>
+<script type="text/javascript" src="../../JSframework/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../Commonfile/Js/input-num.js"></script>
+<link href="../../Commonfile/Css/input_num.css" rel="stylesheet" type="text/css" />
+
+
+<link rel="stylesheet" type="text/css" href="../../JSframework/themes/gray/easyui.css" id="swicth-style">
+
+<script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/artDialog.js?skin=blue"></script>
+<script type="text/javascript" language="javascript" src="../../Commonfile/Js/dialog4/plugins/iframeTools.js"></script>
+<script type="text/javascript">
+	var openWindow;
+	var relative_receiveData=[];
+	$(function(){
+		var pager = $('#dg').datagrid().datagrid('getPager');
+		//$('#dg').datagrid('load');    
+	});
+	
+	
+	
+	//删除按钮
+	function edit() {
+		var row = $("#dg").datagrid().getSelected();
+		if(row == null) {
+			alert("请选择一行");
+			return;
+		}
+		art.dialog.open('basic_EditBuildingDetail.html', {
+			width: '1000px',
+			height: '400px',
+			title: '编辑家庭',
+			opacity: 0.4,
+			skin: 'blue',
+			lock: true,
+			ok: function (iframeWin, topWin) {
+				// iframeWin: 对话框iframe内容的window对象
+				// topWin: 对话框所在位置的window对象
+				iframeWin.checkdata(window);
+				return false;
+			},
+			cancel: true
+		}
+		);
+		
+	
+	}
+	
+</script>
+
+<title>社区智能管理系统</title>
+</head>
+
+<body>
+<div style="margin:20px 0;"></div>
+	<div class="easyui-panel" title="编辑楼栋" style="width:400px">
+		<div style="padding:10px 60px 20px 60px">
+			<form id="ff" method="post">
+				<table width="100%" border="0" cellspacing="1" cellpadding="1">
+					  <tr style="background:#fff;">
+						<td><span class="font01">*</span>项目名称：</td>
+						<td><input type="text" id="projectName" /></td>
+						<td><span class="font01">*</span>楼栋编号： </td>
+						<td><input type="text" id="buildNum" /></td>
+					  </tr>
+					  <tr>
+						<td><span class="font01">*</span>楼栋名称：</td>
+						<td><input type="text" id="buildName" /></td>
+						<td><span class="font01">*</span>楼栋类别： </td>
+						<td><select id="buildType" class="easyui-combobox" panelHeight="auto" style="width:100px"><option>多层</option><option>高层</option></select></td>
+					  </tr>
+					  <tr>
+						<td><span class="font01">*</span>层数：</td>
+						<td><select id="floorNum" class="easyui-combobox" panelHeight="auto" style="width:100px"><option>6</option><option>7</option></select></td>
+						<td><span class="font01">*</span>房屋类型： </td>
+						<td><select id="houseType" class="easyui-combobox" panelHeight="auto" style="width:100px"><option>现房</option><option>期房</option></select></td>
+					  </tr>
+					  <tr>
+						<td colspan="4">图片地址：</td>
+						<td rowspan="3"><input type="file" id="pageAdd" class="easyui-filebox" style="width:400px" data-options="浏览"/><img src="../../Commonfile/Images/photo.jpg" /></td>
+					  </tr>
+					  <tr>
+						<td colspan="2">备注：</td>
+						<td rowspan="3"><textarea style="width:300px;height:100px;"></textarea></td>
+					  </tr>
+				 </table>
+				 <div style="text-align:center;padding:5px">
+					<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">保存</a>
+					<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">取消</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
