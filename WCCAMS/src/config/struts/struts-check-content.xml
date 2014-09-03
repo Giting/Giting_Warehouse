@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<!--核对档案action包-->
+	<package name="/check/content" namespace="/check/content"  extends="json-default">
+		<action name="CN_addContentAction" class="addContentAction" >
+			<result type="json">
+				<param name="root">map</param>
+			</result>
+		</action>
+		
+		<action name="CN_deleteContentAction" class="deleteContentAction" >
+			<result type="json">
+				<param name="root">map</param>
+			</result>
+		</action>
+		
+		<action name="CN_selectContentAction" class="selectContentAction" >
+			<result type="json">
+				<param name="root">map</param>
+			</result>
+		</action>
+	</package>	
+			
+</struts>

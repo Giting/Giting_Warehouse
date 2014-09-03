@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+
+	<!--核对档案action包-->
+	<package name="/check/filecheck" namespace="/check/filecheck" extends="json-default">
+	
+        <action name="FC_selectToDoTasksListAction" class="selectToDoTasksListAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+        
+        <action name="FC_auditCheckFileInJBPMAction" class="auditCheckFileInJBPMAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+        
+        <action name="FC_auditBackCheckFileInJBPMAction" class="auditBackCheckFileInJBPMAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+        
+        <action name="FC_rejectCheckFileAction" class="rejectCheckFileAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+        
+        <action name="AddCheckWorkFlowDefinitionAction" class="addCheckWorkFlowDefinitionAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+        
+        <action name="RowSetCheckWorkFlowDefinitionsAction" class="rowSetCheckWorkFlowDefinitionsAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+		
+		<action name="SelectCheckWorkFlowDefinitionAction" class="selectCheckWorkFlowDefinitionAction">
+            <result type="json">
+                <param name="root">map</param>
+            </result>
+        </action>
+		
+	</package>	
+			
+</struts>
