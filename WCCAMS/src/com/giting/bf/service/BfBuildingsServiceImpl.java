@@ -23,9 +23,6 @@ import com.giting.util.common.BaseServiceImpl;
 @Service("bfBuildingsService")
 public class BfBuildingsServiceImpl extends BaseServiceImpl implements IBfBuildingsService{
 	
-	/** 
-	* @Fields bfBuildingsDao : TODO(用一句话描述这个变量表示什么) 
-	*/ 
 	@Resource
 	private IBfBuildingsDao bfBuildingsDao;
 

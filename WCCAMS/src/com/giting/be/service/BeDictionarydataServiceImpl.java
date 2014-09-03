@@ -23,9 +23,6 @@ import com.giting.util.common.BaseServiceImpl;
 @Service("beDictionarydataService")
 public class BeDictionarydataServiceImpl extends BaseServiceImpl implements IBeDictionarydataService{
 	
-	/** 
-	* @Fields beDictionarydataDao : TODO(用一句话描述这个变量表示什么) 
-	*/ 
 	@Resource
 	private IBeDictionarydataDao beDictionarydataDao;
 	
