@@ -2,6 +2,7 @@ package com.giting.sm.dao;
 
 import org.springframework.stereotype.Repository;
 
+import com.giting.entities.table.SmUser;
 import com.giting.util.common.BaseDaoImpl;
 
 /**   
@@ -19,5 +20,11 @@ import com.giting.util.common.BaseDaoImpl;
 */ 
 @Repository("smUserDao")
 public class SmUserDaoImpl extends BaseDaoImpl implements ISmUserDao{
+
+	@Override
+	public SmUser getSmUser(String username, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

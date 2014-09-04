@@ -1,5 +1,6 @@
 package com.giting.sm.service;
 
+import com.giting.entities.table.SmUser;
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +17,16 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface ISmUserService extends IBaseService{
+	
+	/** 
+	 * @Title: getSmUser 
+	 * @Description: 登录方法
+	 * @param  username 用户名
+	 * @param  password 密码
+	 * @param  commonuser 所在社区
+	 * @return SmUser 返回类型 
+	 * @throws 
+	 */ 
+	public SmUser getSmUser(String username,String password,String commonuser);
 
 }

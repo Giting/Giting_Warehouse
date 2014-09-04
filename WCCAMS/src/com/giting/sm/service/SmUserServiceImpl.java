@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import com.giting.bf.dao.IBfAcommunityDao;
+import com.giting.entities.table.SmUser;
 import com.giting.sm.dao.ISmUserDao;
 import com.giting.util.common.BaseServiceImpl;
 
@@ -26,5 +27,13 @@ public class SmUserServiceImpl extends BaseServiceImpl implements ISmUserService
 	
 	@Resource
 	private ISmUserDao smUserDao;
+
+	@Override
+	public SmUser getSmUser(String username, String password, String commonuser) {
+		
+		return null;
+	}
+	
+	
 	
 }

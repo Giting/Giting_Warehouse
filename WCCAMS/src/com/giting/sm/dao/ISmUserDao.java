@@ -1,5 +1,6 @@
 package com.giting.sm.dao;
 
+import com.giting.entities.table.SmUser;
 import com.giting.util.common.IBaseDao;
 
 /**   
@@ -16,5 +17,16 @@ import com.giting.util.common.IBaseDao;
 *    
 */ 
 public interface ISmUserDao extends IBaseDao{
+	
+	/** 
+	 * @Title: getSmUser 
+	 * @Description: 查询用户
+	 * @param  username 用户名
+	 * @param  password 密码
+	 * @param  设定文件 
+	 * @return SmUser 返回类型 
+	 * @throws 
+	 */ 
+	public SmUser getSmUser(String username, String password);
 
 }
