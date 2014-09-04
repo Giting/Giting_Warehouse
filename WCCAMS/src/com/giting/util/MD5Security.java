@@ -53,4 +53,8 @@ public class MD5Security {
 		String k = new String(a);
 		return k;
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(MD5("123"));
+	}
 }
