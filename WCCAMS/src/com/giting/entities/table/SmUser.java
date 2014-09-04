@@ -118,7 +118,7 @@ public class SmUser implements java.io.Serializable {
 		this.daLoginName = daLoginName;
 	}
 
-	@Column(name = "da_Pwd", length = 32)
+	@Column(name = "da_Pwd", length = 50)
 	public String getDaPwd() {
 		return this.daPwd;
 	}
