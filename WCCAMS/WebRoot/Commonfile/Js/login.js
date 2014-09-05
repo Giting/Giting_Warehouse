@@ -22,45 +22,34 @@ $(function(){
 	* @param {Object} param 参数对象 
 	*/ 
 	var LoginObject={
-		username ="",
-		password = "",
-		commonuser = "",
-		loginFunctin : function(param) {
+		username:$("#login_userName").val(),
+		password:$("#login_passWord").val(),
+		commonuser:$("#login_communityName").val(),
+		loginFunctin:function(param){
 			 $('#btnLogin').click(
-					 $.post(GlobalVariable.loginUrl,param,
-								function (data) {
-								    if (data == '验证码错误') {
-								        alert('验证码错误');
-								        changeValidateCode();
-								        return;
-								    }
-								    
-								    if (data == '') {
-								        alert('用户名或密码错误');
-								        changeValidateCode();
-								        return;
-								    }
-
-								    var d = $.evalJSON(data);
-								    if (d == null || d == undefined) {
-								        alert('登陆失败');
-								        changeValidateCode();
-								        return;
-								    }
-
-								    try {
-
-								        var etime = d.etime;
-								        var exp = new Date();
-								        exp.setTime(exp.getTime()+ etime* 60 * 1000);
-								        document.cookie =  ("uc")+ "="+ encodeURIComponent(data)+ ";expires="+ exp.toGMTString()+ ";path=/";
-								        document.location.href = p.mainUrl;
-								    } catch (err) {
-								        alert('本地存储失败');
-								    }
-								}); 
+					 //参数对象
+					 var param = {
+						username:this.username,
+						password:this.password, 
+						commonuser:this.commonuser 
+					 }
+					 //使用post请求
+					 $.post(GlobalVariable.loginUrl,//Url地址
+							param,//传递的参数
+							function (data) {//服务器返回后执行的函数 参数 data保存的就是服务器发送到客户端的数据
+							 	console.info(data);
+								var member = eval("("+data+")");	//包数据解析为json 格式  
+								console.info(member); 
+								memer.result
+							}
+					 ); 
 			 );
-		},
-	} 
+		}
+	}
+	
+	//页面对象初始化方法
+	var initFunction = function(){
+		LoginObject.loginFunctin();
+	}
 	
 }
