@@ -19,7 +19,8 @@
 	<constant name="struts.action.extension" value="do,action,jhtml,,"/>
      <!-- Action类交给Spring管理 -->
     <constant name="struts.objectFactory" value="spring" />
-	<!-- <include file="../classes/config/struts/struts-check-filecheck.xml"/>
-	<include file="../classes/config/struts/struts-check-content.xml"/> -->
+	<include file="../classes/config/struts/struts-sm.xml"/>
+	
+	<!-- <include file="../classes/config/struts/struts-check-content.xml"/> -->
 
 </struts>
