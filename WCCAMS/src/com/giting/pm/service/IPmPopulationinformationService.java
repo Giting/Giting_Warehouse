@@ -1,5 +1,8 @@
 package com.giting.pm.service;
 
+import java.util.Map;
+
+import com.giting.entities.table.PmPopulationinformation;
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +19,25 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface IPmPopulationinformationService extends IBaseService {
-
+	/**
+	 * 
+	 * 描述：新增人口信息
+	 * 作者：石超
+	 * 日期 :2014-9-5 下午10:48:26
+	 */
+     public Map<String,Object> addPmPopulationinformation(PmPopulationinformation pp,String pmFamilyId);
+     /**
+      * 
+      * 描述：删除人口信息
+      * 作者：石超
+      * 日期 :2014-9-5 下午10:49:14
+      */
+     public Map<String,Object> deletePmPopulationinformation(String pkId);
+     /**
+      * 
+      * 描述：修改人口信息
+      * 作者：石超
+      * 日期 :2014-9-5 下午10:49:50
+      */
+     public Map<String,Object> updatePmPopulationinformation(PmPopulationinformation pp);
 }

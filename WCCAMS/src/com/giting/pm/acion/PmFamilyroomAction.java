@@ -31,4 +31,10 @@ public class PmFamilyroomAction extends ActionSupport{
 	@Resource
 	private IPmFamilyroomService pmFamilyroomService;
 
+	@Override
+	public String execute() throws Exception {
+		// TODO Auto-generated method stub
+		return super.execute();
+	}
+
 }

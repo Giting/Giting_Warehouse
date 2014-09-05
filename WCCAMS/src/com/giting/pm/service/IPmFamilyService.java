@@ -1,5 +1,8 @@
 package com.giting.pm.service;
 
+import java.util.Map;
+
+import com.giting.entities.table.PmFamily;
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +19,27 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface IPmFamilyService extends IBaseService {
-
+	/**
+	 * 
+	 * 描述：新增家庭信息
+	 * 作者：石超
+	 * 日期 :2014-9-5 下午09:17:43
+	 */
+   public Map<String,Object> addPmFamily(PmFamily pf);
+   /**
+    * 
+    * 描述：删除家庭信息
+    * 作者：石超
+    * 日期 :2014-9-5 下午09:19:11
+    */
+   public Map<String,Object> deletePmFamily(String pkId);
+   /**
+    * 
+    * 描述：修改家庭信息
+    * 作者：石超
+    * 日期 :2014-9-5 下午09:21:13
+    */
+   public Map<String,Object> updatePmFamily(PmFamily pf);
+   
+   
 }

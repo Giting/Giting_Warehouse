@@ -32,4 +32,6 @@ public class PmPopulationinformationAction extends ActionSupport{
 	private IPmPopulationinformationService pmPopulationinformationService;
 
 	
+
+	
 }
