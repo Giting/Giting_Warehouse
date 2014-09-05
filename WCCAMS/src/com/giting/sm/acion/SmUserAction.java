@@ -1,11 +1,19 @@
 package com.giting.sm.acion;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.jms.Session;
+
+import net.sf.json.JSONObject;
 
 import org.springframework.stereotype.Controller;
 
-import com.giting.sm.service.ISmModuleService;
+import com.giting.entities.table.SmUser;
 import com.giting.sm.service.ISmUserService;
+import com.giting.util.CheckCode;
+import com.giting.util.common.BaseAction;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**   
@@ -22,7 +30,7 @@ import com.opensymphony.xwork2.ActionSupport;
 *    
 */ 
 @Controller("smUserAction")
-public class SmUserAction extends ActionSupport{
+public class SmUserAction extends BaseAction{
 
 	/** 
 	* @Fields serialVersionUID : 序列号 
@@ -32,11 +40,11 @@ public class SmUserAction extends ActionSupport{
 	/** 
 	* @Fields username : 登录名 
 	*/ 
-	private String username;
+	private String userName;
 	/** 
 	* @Fields password : 密码
 	*/ 
-	private String password;
+	private String passWord;
 	/** 
 	* @Fields commonuser : 所在社区
 	*/ 
@@ -46,28 +54,47 @@ public class SmUserAction extends ActionSupport{
 	* @Fields result : 返回结果
 	*/ 
 	private String result;
+	
 	@Resource
 	private ISmUserService smUserService;
 	
 	public String login() throws Exception{
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		
+		try {
+			 map = smUserService.getSmUserState(userName, passWord, commonuser);
+		} catch (Exception e) {
+			 map=CheckCode.getLoginMapAllError();
+		}
+		
+		SmUser smUser =new SmUser();
+		if(map != null){
+			if((Integer)map.get("result") == 1){
+				smUser = smUserService.getSmUser(userName, passWord, commonuser);
+			}
+		}
+		Map<String,Object>  sessionMap = getSession();
+		
 
+		this.setResult(JSONObject.fromObject(map).toString());
 		return SUCCESS;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPassWord() {
+		return passWord;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassWord(String passWord) {
+		this.passWord = passWord;
 	}
 
 	public String getCommonuser() {

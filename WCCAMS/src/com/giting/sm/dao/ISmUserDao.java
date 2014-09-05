@@ -21,12 +21,42 @@ public interface ISmUserDao extends IBaseDao{
 	/** 
 	 * @Title: getSmUser 
 	 * @Description: 查询用户
-	 * @param  username 用户名
-	 * @param  password 密码
+	 * @param  userName 用户名
+	 * @param  passWord 密码
+	 * @param  commonuser 社区名称
 	 * @param  设定文件 
 	 * @return SmUser 返回类型 
 	 * @throws 
 	 */ 
-	public SmUser getSmUser(String username, String password);
-
+	public SmUser getSmUser(String userName, String passWord,String commonuser) throws Exception;
+	
+	/** 
+	 * @Title: getSmUserByName 
+	 * @Description: 通过用户名查询SmUser 
+	 * @param @param username 用户名
+	 * @param @return 设定文件 
+	 * @return int 返回类型 
+	 * @throws 
+	 */ 
+	public int getSmUserByName(String userName);
+	
+	/** 
+	 * @Title: getSmUserByPassWord 
+	 * @Description: 通过密码查询SmUser
+	 * @param  passWord 密码
+	 * @param  设定文件 
+	 * @return int 返回类型 
+	 * @throws 
+	 */ 
+	public int getSmUserByPassWord(String userName,String passWord);
+	
+	/** 
+	 * @Title: getSmUserByCommonuser 
+	 * @Description: 通过社区名词查询SmUser
+	 * @param  commonuser 社区名称
+	 * @param  设定文件 
+	 * @return int 返回类型 
+	 * @throws 
+	 */ 
+	public int getSmUserByCommonuser(String userName,String passWord,String commonuser);
 }

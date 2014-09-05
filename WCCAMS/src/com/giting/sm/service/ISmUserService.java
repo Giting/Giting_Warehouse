@@ -1,5 +1,7 @@
 package com.giting.sm.service;
 
+import java.util.Map;
+
 import com.giting.entities.table.SmUser;
 import com.giting.util.common.IBaseService;
 
@@ -27,6 +29,18 @@ public interface ISmUserService extends IBaseService{
 	 * @return SmUser 返回类型 
 	 * @throws 
 	 */ 
-	public SmUser getSmUser(String username,String password,String commonuser);
+	public Map<String,Object> getSmUserState(String username,String password,String commonuser) throws Exception;
 
+	/** 
+	 * @Title: getSmUser 
+	 * @Description: 查询用户
+	 * @param  userName 用户名
+	 * @param  passWord 密码
+	 * @param  commonuser 社区名称
+	 * @param  设定文件 
+	 * @return SmUser 返回类型 
+	 * @throws 
+	 */ 
+	public SmUser getSmUser(String userName, String passWord,String commonuser) throws Exception;
+	
 }
