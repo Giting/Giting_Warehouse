@@ -7,8 +7,14 @@
     <display-name></display-name>	
     
     <welcome-file-list>
-	   <welcome-file>index.jsp</welcome-file>
+	    <welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+	
+    <error-page>
+    	<error-code>404</error-code>
+        <location>error.jsp</location>
+    </error-page>
+    
     
     <!-- log4j配置 -->
     <context-param>
@@ -42,7 +48,6 @@
 			<param-value>struts-default.xml,struts-plugin.xml,config/struts/struts.xml</param-value>
     	</init-param>
     </filter>
-	
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
@@ -63,4 +68,16 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	
+  <!-- 登录验证过滤器 -->	
+  <filter>
+    <filter-name>LoginVerifyFilter</filter-name>
+    <filter-class>com.giting.filter.LoginVerifyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginVerifyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 </web-app>
