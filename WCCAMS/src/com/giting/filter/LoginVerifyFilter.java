@@ -42,14 +42,14 @@ public class LoginVerifyFilter implements javax.servlet.Filter {
 	    //从session里取的用户名信息
 	    String username = (String) session.getAttribute("username");
 	    //判断如果没有取到用户信息,就跳转到登陆页面
-	    if (username == null || "".equals(username)) {
-	      //跳转到登陆页面
-	      res.sendRedirect("http://"+req.getHeader("Host")+"/login.jsp");
-	    }
-	    else {
+//	    if (username == null || "".equals(username)) {
+//	      //跳转到登陆页面
+//	      res.sendRedirect("http://"+req.getHeader("Host")+"/login.jsp");
+//	    }
+//	    else {
 	      //已经登陆,继续此次请求
 	      chain.doFilter(request,response);
-	    }
+//	    }
 	}
 
 	@Override
