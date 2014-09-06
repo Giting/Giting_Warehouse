@@ -1,5 +1,6 @@
 package com.giting.bf.service;
 
+
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +17,7 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface IBfRoomService extends IBaseService{
+	
+	
 
 }

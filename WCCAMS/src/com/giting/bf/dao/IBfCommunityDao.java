@@ -1,5 +1,7 @@
 package com.giting.bf.dao;
 
+import java.util.List;
+
 import com.giting.util.common.IBaseDao;
 
 /**   
@@ -16,5 +18,7 @@ import com.giting.util.common.IBaseDao;
 *    
 */ 
 public interface IBfCommunityDao extends IBaseDao{
+	 
+	 
 
 }

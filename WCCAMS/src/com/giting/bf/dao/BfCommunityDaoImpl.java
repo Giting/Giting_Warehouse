@@ -1,5 +1,15 @@
 package com.giting.bf.dao;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 
 import com.giting.util.common.BaseDaoImpl;
@@ -19,5 +29,6 @@ import com.giting.util.common.BaseDaoImpl;
 */ 
 @Repository("bfCommunityDao")
 public class BfCommunityDaoImpl extends BaseDaoImpl implements IBfCommunityDao{
+
 
 }

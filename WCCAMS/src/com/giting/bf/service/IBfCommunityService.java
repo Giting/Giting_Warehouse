@@ -1,5 +1,8 @@
 package com.giting.bf.service;
 
+import java.util.List;
+
+import com.giting.entities.table.BfCommunity;
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +19,14 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface IBfCommunityService extends IBaseService{
-
+	/**
+	 * 
+	 * @author ad
+	 * 描述:获得小区表中数据
+	 * @date:2014年9月5日
+	 * @param page
+	 * @param row
+	 * @return
+	 */
+	public List<BfCommunity> getAllCommunity(int page, int row);
 }

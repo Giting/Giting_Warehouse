@@ -1,10 +1,14 @@
 package com.giting.bf.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import com.giting.bf.dao.IBfBuildingsDao;
+import com.giting.exception.BaseDaoException;
 import com.giting.util.common.BaseServiceImpl;
 
 /**   
@@ -25,6 +29,29 @@ public class BfBuildingsServiceImpl extends BaseServiceImpl implements IBfBuildi
 	
 	@Resource
 	private IBfBuildingsDao bfBuildingsDao;
+
+	@Override
+	/**
+	 * 
+	 * @author liuyaru
+	 * 描述:分页获得楼栋表中数据
+	 * @date:2014年9月5日
+	 * @param page
+	 * @param row
+	 * @return
+	 */
+	public List getAllBuildingInfo(int page, int row) {
+		List buildingList = new ArrayList<>();
+		String hql = "from BfBuildings where 1 = 1";
+		try {
+			buildingList = bfBuildingsDao.query(page, row, hql);
+		} catch (BaseDaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// TODO Auto-generated method stub
+		return buildingList;
+	}
 
 	
 }

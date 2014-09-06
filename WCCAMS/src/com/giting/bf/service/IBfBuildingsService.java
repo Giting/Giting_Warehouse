@@ -1,5 +1,7 @@
 package com.giting.bf.service;
 
+import java.util.List;
+
 import com.giting.util.common.IBaseService;
 
 /**   
@@ -16,5 +18,14 @@ import com.giting.util.common.IBaseService;
 *    
 */ 
 public interface IBfBuildingsService extends IBaseService{
-
+	/**
+	 * 
+	 * @author liuyaru
+	 * 描述:分页获得楼栋表中数据
+	 * @date:2014年9月5日
+	 * @param page
+	 * @param row
+	 * @return
+	 */
+	List getAllBuildingInfo(int page, int row);
 }

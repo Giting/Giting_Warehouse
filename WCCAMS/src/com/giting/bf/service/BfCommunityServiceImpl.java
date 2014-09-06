@@ -1,10 +1,15 @@
 package com.giting.bf.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import com.giting.bf.dao.IBfCommunityDao;
+import com.giting.entities.table.BfCommunity;
+import com.giting.exception.BaseDaoException;
 import com.giting.util.common.BaseServiceImpl;
 
 /**   
@@ -25,6 +30,28 @@ public class BfCommunityServiceImpl extends BaseServiceImpl implements IBfCommun
 
 	@Resource
 	private IBfCommunityDao bfCommunityDao;
+
+	@Override
+	/**
+	 * 
+	 * @author ad
+	 * 描述:分页查询小区表中数据
+	 * @date:2014年9月5日
+	 * @param page
+	 * @param row
+	 * @return
+	 */
+	public List<BfCommunity> getAllCommunity(int page, int row) {
+		List<BfCommunity> bfCommunitList = new ArrayList<>();
+		String hql = "from BfCommunity where 1 = 1";
+		try {
+			bfCommunitList = (List<BfCommunity>) bfCommunityDao.query(page, row, hql);
+		} catch (BaseDaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bfCommunitList;
+	}
 
 
 }

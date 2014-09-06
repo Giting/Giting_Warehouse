@@ -31,6 +31,7 @@ public class BfRoomAction extends ActionSupport{
 
 	@Resource
 	private IBfRoomService bfRoomService;
+	
 
 	
 }
