@@ -19,8 +19,8 @@ $(function(){
 	* @param {Object} param 参数对象 
 	*/ 
 	var GlobalVariable ={
-			loginUrl :"",
-			jumpPage :""
+			loginUrl :"/sm/smUserAction.action",
+			jumpPage :"Commonfile/Html/login.html"
 	}
 	
 	/** 
